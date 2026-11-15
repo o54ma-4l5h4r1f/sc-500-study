@@ -1,0 +1,193 @@
+# Suggested study path — rendered as the last section of the dashboard.
+# Every `objectives` entry must be a real objective ID and every `foundations` entry a real
+# foundation slug (build.py validates both). `kind` picks the step's label:
+#   read | lesson | lab | practice | review | mock
+
+schema_version = 1
+title = "Suggested study path"
+intro = "Six weeks, about 40 hours each. The order goes from identity outward: who can get in, then what holds the secrets and rules, then the data and the network around it, then the compute inside, then AI, and last the posture tools and the SOC ground you already know. Each layer reuses the one before."
+
+[[habits]]
+label = "Every day"
+text = "30–45 minutes hands-on in your own Azure subscription: build the thing you read about in a throwaway resource group with the smallest SKU, then delete the group."
+foundations = ["azure-portal-cli-basics"]
+
+[[habits]]
+label = "Every Friday"
+text = "Read that week's cheatsheet and diagrams, build practice questions for what you finished, then take one quiz."
+
+[[habits]]
+label = "Before week 6"
+text = "Have roughly 250–350 practice questions in the bank, so the week-6 mocks have enough to draw from. Build them weekly, not at the end."
+
+[[habits]]
+label = "Cost guard"
+text = "Azure Firewall, Bastion, VPN gateways, Virtual WAN hubs and AKS bill by the hour. Check Cost Management every Friday and never leave them running overnight."
+
+# ---------------------------------------------------------------------------
+[[weeks]]
+n = 1
+title = "Identity first"
+focus = "Azure and identity primers, then Entra ID access controls"
+
+[[weeks.steps]]
+kind = "read"
+text = "Foundations 1–10, in order (about 2 days). Resource hierarchy, CLI, infrastructure as code, Entra, OAuth, RBAC, Conditional Access, licensing, the stack map, and crypto basics."
+foundations = ["azure-resource-hierarchy", "azure-portal-cli-basics", "infrastructure-as-code-basics", "entra-id-basics", "oauth-tokens-and-consent", "azure-rbac-and-entra-roles", "conditional-access-basics", "m365-tenants-and-licensing", "microsoft-security-stack-map", "keys-secrets-and-certificates"]
+
+[[weeks.steps]]
+kind = "lesson"
+text = "D1.1: Entra ID. Start with managed identities and app identity (labbable), then authentication methods, consent, and the P1/P2 tours: Conditional Access and PIM."
+objectives = ["D1.1.6", "D1.1.4", "D1.1.3", "D1.1.5", "D1.1.2", "D1.1.1"]
+
+[[weeks.steps]]
+kind = "lab"
+text = "Create an app registration, grant it a scoped role, give a VM or Function a managed identity, then review the enterprise app's consent and sign-in settings."
+
+[[weeks.steps]]
+kind = "practice"
+text = "Friday: build D1.1 questions, one quiz pass."
+
+# ---------------------------------------------------------------------------
+[[weeks]]
+n = 2
+title = "Secrets and rules"
+focus = "Key Vault, then governance: Policy, locks, roles, backup, IaC"
+
+[[weeks.steps]]
+kind = "read"
+text = "Foundations: Azure Policy and Defender for Cloud basics, before the governance lessons."
+foundations = ["azure-policy-basics", "defender-for-cloud-basics"]
+
+[[weeks.steps]]
+kind = "lesson"
+text = "D1.2: Key Vault, in order. Access models (D1.2.3) and settings like soft delete and purge protection (D1.2.2) carry the traps."
+objectives = ["D1.2.1", "D1.2.2", "D1.2.3", "D1.2.4", "D1.2.5", "D1.2.6", "D1.2.7"]
+
+[[weeks.steps]]
+kind = "lab"
+text = "Deploy a vault with RBAC permissions, purge protection and the firewall on. Add a secret and a key, then read the secret from a managed identity."
+objectives = ["D1.2.1", "D1.2.3", "D1.2.4"]
+
+[[weeks.steps]]
+kind = "lesson"
+text = "D1.3: governance. Azure Policy (D1.3.1) is the heaviest. Then locks, role assignments, custom roles, overprivilege, backup security and IaC."
+objectives = ["D1.3.1", "D1.3.4", "D1.3.5", "D1.3.6", "D1.3.7", "D1.3.3", "D1.3.2", "D1.3.8", "D1.3.9"]
+
+[[weeks.steps]]
+kind = "review"
+text = "Friday: D1 cheatsheet and diagrams, build D1.2 and D1.3 questions, then a short Domain 1 quiz."
+links = [["D1 cheatsheet", "cheatsheet/D1.html"], ["D1 diagrams", "diagram/D1.html"]]
+
+# ---------------------------------------------------------------------------
+[[weeks]]
+n = 3
+title = "Data and the network around it"
+focus = "Domain 2, the heaviest domain: storage, SQL, then network controls"
+
+[[weeks.steps]]
+kind = "read"
+text = "Foundations: storage accounts, Azure SQL, virtual networks and private DNS."
+foundations = ["storage-accounts-basics", "azure-sql-basics", "virtual-networks-and-subnets", "private-dns-and-name-resolution"]
+
+[[weeks.steps]]
+kind = "lesson"
+text = "D2.1 storage, then D2.2 databases."
+objectives = ["D2.1.1", "D2.1.4", "D2.1.2", "D2.1.3", "D2.2.1", "D2.2.2", "D2.2.3"]
+
+[[weeks.steps]]
+kind = "lesson"
+text = "D2.3 network. NSGs and ASGs, private endpoints and Azure Firewall are high-risk. Finish with Network Watcher to check what you built."
+objectives = ["D2.3.1", "D2.3.6", "D2.3.7", "D2.3.8", "D2.3.2", "D2.3.3", "D2.3.4", "D2.3.5", "D2.3.9"]
+
+[[weeks.steps]]
+kind = "lab"
+text = "Build a VNet with two subnets, an NSG with an ASG rule, and a storage account behind a private endpoint with its privatelink DNS zone. Then check the effective rules with Network Watcher."
+objectives = ["D2.3.1", "D2.3.6", "D2.3.9", "D2.1.2"]
+
+[[weeks.steps]]
+kind = "review"
+text = "Friday: D2 cheatsheet and diagrams, build D2 questions, one quiz."
+links = [["D2 cheatsheet", "cheatsheet/D2.html"], ["D2 diagrams", "diagram/D2.html"]]
+
+# ---------------------------------------------------------------------------
+[[weeks]]
+n = 4
+title = "Compute"
+focus = "Servers and VMs, then the application platform"
+
+[[weeks.steps]]
+kind = "read"
+text = "Foundations: VMs and disks, Arc, AWS/GCP basics, containers, App Service and Functions, Logic Apps, API Management."
+foundations = ["virtual-machines-and-disks", "azure-arc-and-hybrid-machines", "aws-and-gcp-for-azure-people", "containers-and-kubernetes-basics", "app-service-and-functions-basics", "logic-apps-basics", "api-management-basics"]
+
+[[weeks.steps]]
+kind = "lesson"
+text = "D3.2: servers and VMs. Disk encryption options are the main trap."
+objectives = ["D3.2.1", "D3.2.8", "D3.2.2", "D3.2.3", "D3.2.4", "D3.2.5", "D3.2.6", "D3.2.7", "D3.2.9"]
+
+[[weeks.steps]]
+kind = "lesson"
+text = "D3.3: application platform. Containers first, then Functions, Logic Apps, App Service, WAF and API Management."
+objectives = ["D3.3.1", "D3.3.2", "D3.3.3", "D3.3.4", "D3.3.5", "D3.3.6", "D3.3.7", "D3.3.8", "D3.3.9"]
+
+[[weeks.steps]]
+kind = "lab"
+text = "A Trusted-launch VM with no public IP, reached through Bastion (Developer SKU) and JIT. Then an App Service with authentication and access restrictions. Delete the resource group the same day."
+objectives = ["D3.2.8", "D3.2.2", "D3.2.3", "D3.3.7"]
+
+[[weeks.steps]]
+kind = "practice"
+text = "Friday: build D3.2 and D3.3 questions, one quiz."
+
+# ---------------------------------------------------------------------------
+[[weeks]]
+n = 5
+title = "AI security, then posture"
+focus = "Secure AI workloads and agents, then Defender for Cloud as the engineer"
+
+[[weeks.steps]]
+kind = "read"
+text = "Foundations: Microsoft Foundry, AI agents and MCP, Purview."
+foundations = ["microsoft-foundry-basics", "ai-agents-and-mcp-basics", "purview-basics"]
+
+[[weeks.steps]]
+kind = "lesson"
+text = "D3.1: AI security. Start with Foundry guardrails and AI Gateway (labbable), then Defender for AI. The Entra Agent ID, Copilot Studio, DSPM and Agent 365 bullets are portal tours."
+objectives = ["D3.1.9", "D3.1.7", "D3.1.8", "D3.1.10", "D3.1.4", "D3.1.6", "D3.1.5", "D3.1.3", "D3.1.1", "D3.1.2", "D3.1.11"]
+
+[[weeks.steps]]
+kind = "lesson"
+text = "D4.1: Defender for Cloud. CSPM and workload protection plans first, then multicloud, MDVM and EASM."
+objectives = ["D4.1.1", "D4.1.3", "D4.1.2", "D4.1.4", "D4.1.5", "D4.1.6"]
+
+[[weeks.steps]]
+kind = "review"
+text = "Friday: D3 cheatsheet and diagrams, build D3.1 and D4.1 questions."
+links = [["D3 cheatsheet", "cheatsheet/D3.html"], ["D3 diagrams", "diagram/D3.html"]]
+
+# ---------------------------------------------------------------------------
+[[weeks]]
+n = 6
+title = "Quick reviews, then mock exams"
+focus = "SOC ground from the engineer's side in two days, then two full mocks"
+
+[[weeks.steps]]
+kind = "read"
+text = "Refresher primers: Defender portal, Log Analytics workspace, AMA and DCRs, diagnostic settings."
+foundations = ["defender-portal-tour", "log-analytics-workspace", "azure-monitor-agent-and-dcr", "diagnostic-settings-and-activity-log"]
+
+[[weeks.steps]]
+kind = "lesson"
+text = "Mon–Tue: D4.2 Sentinel collection and D4.3 Security Copilot, as quick reviews. Focus on what an engineer configures: roles, DCRs, custom tables, retention, workspaces, plugins."
+objectives = ["D4.2.1", "D4.2.2", "D4.2.3", "D4.2.4", "D4.2.5", "D4.2.6", "D4.2.7", "D4.2.8", "D4.2.9", "D4.2.10", "D4.3.1", "D4.3.2", "D4.3.3", "D4.3.4"]
+
+[[weeks.steps]]
+kind = "practice"
+text = "Tue evening: build D4 questions, read the D4 cheatsheet and diagrams."
+links = [["D4 cheatsheet", "cheatsheet/D4.html"], ["D4 diagrams", "diagram/D4.html"]]
+
+[[weeks.steps]]
+kind = "mock"
+text = "Wed–Fri: two full mock exams. After each, debrief and patch weak areas with the cheatsheets."
+links = [["Mock exam", "mock-exam.html"]]

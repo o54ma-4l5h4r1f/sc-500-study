@@ -1,0 +1,780 @@
+# SC-500 skills-measured outline -- the backbone of the whole system.
+# Source (study guide): https://learn.microsoft.com/credentials/certifications/resources/study-guides/sc-500
+# Source (cert page):    https://learn.microsoft.com/credentials/certifications/cloud-and-ai-security-engineer-associate
+#
+# Exam: SC-500 "Implementing End-to-End Security Controls for Cloud and AI Workloads"
+#   -> Microsoft Certified: Cloud and AI Security Engineer Associate
+#
+# OUTLINE VERSION: the live study guide carries no "as of" date. Captured 2026-11-15 via the
+# Microsoft Learn MCP (microsoft_docs_fetch of the live study guide). The exam is new: the official
+# practice assessment is "not currently available" (cert page, 2026-11-15).
+# Bullet text below is VERBATIM -- do not paraphrase. Question generation and the freshness diff
+# both depend on exact wording.
+#
+# `prior_cert` values: none | soc-analyst | partial | strong. The learner has a SOC-analyst
+#   background (see THE LEARNER). Sentinel collection + Security Copilot bullets are ground they
+#   know -> "soc-analyst" + `quick_review = true` (short refresher page, engineer angle, never skipped).
+# `hours` is the planned study allocation per bullet, weighted by exam weight x difficulty.
+#   Objective hours sum to ~170 h. total_planned_hours (240) also counts the Foundations primers
+#   (~22 h, week 1) and mock exams / weak-area patching (~48 h spread over weeks 5-6 + daily practice).
+# `week` is the 6-week study-plan slot (see content/study-path.toml).
+# `license_blocked = true` = needs licences an Azure-subscription-only lab lacks (Entra ID P1/P2,
+#   Entra Suite, Microsoft 365 Copilot, Purview DSPM, Copilot Studio, Defender XDR, Security Copilot
+#   capacity) -> portal tour + docs, no live lab. Initial guess; objective writers confirm.
+# `high_risk` = heavy weight or highly confusable.
+
+schema_version = 1
+exam_code = "SC-500"
+exam_title = "Implementing End-to-End Security Controls for Cloud and AI Workloads"
+certification = "Microsoft Certified: Cloud and AI Security Engineer Associate"
+study_guide_url = "https://learn.microsoft.com/credentials/certifications/resources/study-guides/sc-500"
+exam_page_url = "https://learn.microsoft.com/credentials/certifications/cloud-and-ai-security-engineer-associate"
+outline_captured = 2026-11-15
+outline_version = "Skills measured (undated, captured 2026-11-15)"
+status = "live"
+total_planned_hours = 240
+
+# sample_weight = normalized midpoint of each domain's weight range; all four sum to 1.0.
+#   midpoints 22.5 / 27.5 / 22.5 / 22.5 (sum 95) normalized below (last rounded to close to 1.0).
+
+# ===========================================================================
+[[domains]]
+id = "D1"
+title = "Manage identity, access, and governance"
+weight_min = 20
+weight_max = 25
+sample_weight = 0.2368
+[[domains.subdomains]]
+id = "D1.1"
+title = "Secure access to resources by using Microsoft Entra ID"
+learn_path = ""
+[[domains.subdomains.objectives]]
+id = "D1.1.1"
+text = "Implement and configure Privileged Identity Management (PIM)"
+prior_cert = "none"
+hours = 3
+week = 1
+high_risk = true
+license_blocked = true
+
+[[domains.subdomains.objectives]]
+id = "D1.1.2"
+text = "Implement conditional access policies"
+prior_cert = "none"
+hours = 3
+week = 1
+high_risk = true
+license_blocked = true
+
+[[domains.subdomains.objectives]]
+id = "D1.1.3"
+text = "Implement and configure authentication methods, including multifactor authentication (MFA) and passwordless"
+prior_cert = "none"
+hours = 2.5
+week = 1
+
+[[domains.subdomains.objectives]]
+id = "D1.1.4"
+text = "Implement and configure identity for applications, including enterprise applications and app registrations"
+prior_cert = "none"
+hours = 2.5
+week = 1
+high_risk = true
+
+[[domains.subdomains.objectives]]
+id = "D1.1.5"
+text = "Manage OAuth permission grants and consent settings"
+prior_cert = "none"
+hours = 2
+week = 1
+
+[[domains.subdomains.objectives]]
+id = "D1.1.6"
+text = "Implement and configure managed identities for Azure resources"
+prior_cert = "none"
+hours = 2
+week = 1
+high_risk = true
+
+[[domains.subdomains]]
+id = "D1.2"
+title = "Secure secrets and keys by using Azure Key Vault"
+learn_path = ""
+[[domains.subdomains.objectives]]
+id = "D1.2.1"
+text = "Deploy Key Vault"
+prior_cert = "none"
+hours = 1.5
+week = 2
+
+[[domains.subdomains.objectives]]
+id = "D1.2.2"
+text = "Configure Key Vault settings"
+prior_cert = "none"
+hours = 2
+week = 2
+high_risk = true
+
+[[domains.subdomains.objectives]]
+id = "D1.2.3"
+text = "Configure access to Key Vault"
+prior_cert = "none"
+hours = 2.5
+week = 2
+high_risk = true
+
+[[domains.subdomains.objectives]]
+id = "D1.2.4"
+text = "Configure firewall settings on Key Vault"
+prior_cert = "none"
+hours = 1.5
+week = 2
+
+[[domains.subdomains.objectives]]
+id = "D1.2.5"
+text = "Manage keys, secrets, and certificates"
+prior_cert = "none"
+hours = 2.5
+week = 2
+
+[[domains.subdomains.objectives]]
+id = "D1.2.6"
+text = "Scan for secrets by using Defender Cloud Security Posture Management (Defender CSPM)"
+prior_cert = "none"
+hours = 1.5
+week = 2
+
+[[domains.subdomains.objectives]]
+id = "D1.2.7"
+text = "Implement Defender for Key Vault"
+prior_cert = "none"
+hours = 1
+week = 2
+
+[[domains.subdomains]]
+id = "D1.3"
+title = "Implement governance to enforce security and regulatory compliance"
+learn_path = ""
+[[domains.subdomains.objectives]]
+id = "D1.3.1"
+text = "Implement and configure security controls by using Azure Policy, including built-in and custom policy definitions"
+prior_cert = "none"
+hours = 3.5
+week = 2
+high_risk = true
+
+[[domains.subdomains.objectives]]
+id = "D1.3.2"
+text = "Evaluate regulatory compliance by using Microsoft Defender for Cloud"
+prior_cert = "none"
+hours = 2
+week = 2
+
+[[domains.subdomains.objectives]]
+id = "D1.3.3"
+text = "Implement and configure security controls in Defender for Cloud, including security standards and recommendations"
+prior_cert = "none"
+hours = 2.5
+week = 2
+high_risk = true
+
+[[domains.subdomains.objectives]]
+id = "D1.3.4"
+text = "Implement resource locks"
+prior_cert = "none"
+hours = 1.5
+week = 2
+
+[[domains.subdomains.objectives]]
+id = "D1.3.5"
+text = "Manage Azure built-in role assignments"
+prior_cert = "none"
+hours = 2
+week = 2
+
+[[domains.subdomains.objectives]]
+id = "D1.3.6"
+text = "Manage custom roles, including Azure roles and Microsoft Entra roles"
+prior_cert = "none"
+hours = 2.5
+week = 2
+high_risk = true
+
+[[domains.subdomains.objectives]]
+id = "D1.3.7"
+text = "Evaluate and remediate overprivileged access assignments by using Azure role-based access control (RBAC)"
+prior_cert = "none"
+hours = 2
+week = 2
+
+[[domains.subdomains.objectives]]
+id = "D1.3.8"
+text = "Configure security controls for backup protection by using Azure Backup security features"
+prior_cert = "none"
+hours = 2
+week = 2
+
+[[domains.subdomains.objectives]]
+id = "D1.3.9"
+text = "Implement and configure security controls by using infrastructure as code"
+prior_cert = "none"
+hours = 2
+week = 2
+
+
+# ===========================================================================
+[[domains]]
+id = "D2"
+title = "Secure storage, databases, and networking"
+weight_min = 25
+weight_max = 30
+sample_weight = 0.2895
+[[domains.subdomains]]
+id = "D2.1"
+title = "Implement security for storage accounts"
+learn_path = ""
+[[domains.subdomains.objectives]]
+id = "D2.1.1"
+text = "Implement and configure security for storage accounts"
+prior_cert = "none"
+hours = 2.5
+week = 3
+high_risk = true
+
+[[domains.subdomains.objectives]]
+id = "D2.1.2"
+text = "Configure Azure Storage firewall rules"
+prior_cert = "none"
+hours = 2
+week = 3
+
+[[domains.subdomains.objectives]]
+id = "D2.1.3"
+text = "Implement Defender for Storage threat protection configurations"
+prior_cert = "none"
+hours = 1.5
+week = 3
+
+[[domains.subdomains.objectives]]
+id = "D2.1.4"
+text = "Manage access to storage, including access policies"
+prior_cert = "none"
+hours = 2.5
+week = 3
+high_risk = true
+
+[[domains.subdomains]]
+id = "D2.2"
+title = "Implement security for databases"
+learn_path = ""
+[[domains.subdomains.objectives]]
+id = "D2.2.1"
+text = "Implement platform-level security configurations in Azure SQL"
+prior_cert = "none"
+hours = 3
+week = 3
+high_risk = true
+
+[[domains.subdomains.objectives]]
+id = "D2.2.2"
+text = "Configure database auditing for Azure SQL Database and Azure SQL Managed Instance"
+prior_cert = "none"
+hours = 2
+week = 3
+
+[[domains.subdomains.objectives]]
+id = "D2.2.3"
+text = "Configure Defender for Databases protection across Azure database services"
+prior_cert = "none"
+hours = 1.5
+week = 3
+
+[[domains.subdomains]]
+id = "D2.3"
+title = "Implement security for Azure network services"
+learn_path = ""
+[[domains.subdomains.objectives]]
+id = "D2.3.1"
+text = "Implement and manage network security groups (NSGs) and application security groups (ASGs)"
+prior_cert = "none"
+hours = 3
+week = 3
+high_risk = true
+
+[[domains.subdomains.objectives]]
+id = "D2.3.2"
+text = "Implement and configure network access policies by using Azure Virtual Network Manager"
+prior_cert = "none"
+hours = 2
+week = 3
+
+[[domains.subdomains.objectives]]
+id = "D2.3.3"
+text = "Configure security for an Azure Virtual WAN"
+prior_cert = "none"
+hours = 2
+week = 3
+
+[[domains.subdomains.objectives]]
+id = "D2.3.4"
+text = "Implement and configure security for virtual private network (VPN) connections"
+prior_cert = "none"
+hours = 2
+week = 3
+
+[[domains.subdomains.objectives]]
+id = "D2.3.5"
+text = "Implement and configure Microsoft Entra Private Access"
+prior_cert = "none"
+hours = 2
+week = 3
+license_blocked = true
+
+[[domains.subdomains.objectives]]
+id = "D2.3.6"
+text = "Configure Azure private endpoints to secure access to Azure platform as a service (PaaS) resources"
+prior_cert = "none"
+hours = 3
+week = 3
+high_risk = true
+
+[[domains.subdomains.objectives]]
+id = "D2.3.7"
+text = "Configure Azure Private Link services to secure access to network resources"
+prior_cert = "none"
+hours = 2
+week = 3
+
+[[domains.subdomains.objectives]]
+id = "D2.3.8"
+text = "Implement and configure Azure Firewall"
+prior_cert = "none"
+hours = 3
+week = 3
+high_risk = true
+
+[[domains.subdomains.objectives]]
+id = "D2.3.9"
+text = "Evaluate effective security rules by using Azure Network Watcher diagnostics"
+prior_cert = "none"
+hours = 2
+week = 3
+
+
+# ===========================================================================
+[[domains]]
+id = "D3"
+title = "Secure compute"
+weight_min = 20
+weight_max = 25
+sample_weight = 0.2368
+[[domains.subdomains]]
+id = "D3.1"
+title = "Implement security for AI"
+learn_path = ""
+[[domains.subdomains.objectives]]
+id = "D3.1.1"
+text = "Identify overexposure of data in SharePoint"
+prior_cert = "none"
+hours = 2
+week = 5
+license_blocked = true
+
+[[domains.subdomains.objectives]]
+id = "D3.1.2"
+text = "Identify risks related to Microsoft Copilot and AI apps by using Microsoft Purview Data Security Posture Management (DSPM)"
+prior_cert = "none"
+hours = 2.5
+week = 5
+license_blocked = true
+
+[[domains.subdomains.objectives]]
+id = "D3.1.3"
+text = "Enable and configure real-time protection for Microsoft Copilot Studio agents"
+prior_cert = "none"
+hours = 2
+week = 5
+license_blocked = true
+
+[[domains.subdomains.objectives]]
+id = "D3.1.4"
+text = "Implement conditional access for Microsoft Entra Agent ID"
+prior_cert = "none"
+hours = 2
+week = 5
+license_blocked = true
+
+[[domains.subdomains.objectives]]
+id = "D3.1.5"
+text = "Analyze blast radius for security risks related to Entra Agent ID by using Defender XDR"
+prior_cert = "none"
+hours = 2
+week = 5
+license_blocked = true
+
+[[domains.subdomains.objectives]]
+id = "D3.1.6"
+text = "Manage Entra Agent ID access"
+prior_cert = "none"
+hours = 2
+week = 5
+license_blocked = true
+
+[[domains.subdomains.objectives]]
+id = "D3.1.7"
+text = "Configure and deploy AI Gateway in Azure API Management for Microsoft Foundry"
+prior_cert = "none"
+hours = 2.5
+week = 5
+high_risk = true
+
+[[domains.subdomains.objectives]]
+id = "D3.1.8"
+text = "Enable Defender for AI Service in Cloud Workload Protection in Defender for Cloud"
+prior_cert = "none"
+hours = 2
+week = 5
+
+[[domains.subdomains.objectives]]
+id = "D3.1.9"
+text = "Configure guardrails for agent security in Foundry"
+prior_cert = "none"
+hours = 2.5
+week = 5
+high_risk = true
+
+[[domains.subdomains.objectives]]
+id = "D3.1.10"
+text = "Monitor AI security by using the Data and AI security dashboard in Defender for Cloud"
+prior_cert = "none"
+hours = 2
+week = 5
+
+[[domains.subdomains.objectives]]
+id = "D3.1.11"
+text = "Manage agents in Microsoft 365 admin center"
+prior_cert = "none"
+hours = 1.5
+week = 5
+license_blocked = true
+
+[[domains.subdomains]]
+id = "D3.2"
+title = "Implement security for servers and virtual machines (VMs)"
+learn_path = ""
+[[domains.subdomains.objectives]]
+id = "D3.2.1"
+text = "Implement and configure disk encryption"
+prior_cert = "none"
+hours = 2.5
+week = 4
+high_risk = true
+
+[[domains.subdomains.objectives]]
+id = "D3.2.2"
+text = "Plan and implement Azure Bastion"
+prior_cert = "none"
+hours = 2
+week = 4
+
+[[domains.subdomains.objectives]]
+id = "D3.2.3"
+text = "Enable and enforce use of just-in-time (JIT) VM access"
+prior_cert = "none"
+hours = 2
+week = 4
+
+[[domains.subdomains.objectives]]
+id = "D3.2.4"
+text = "Extend security controls to hybrid and multicloud servers by using Azure Arc"
+prior_cert = "none"
+hours = 2
+week = 4
+
+[[domains.subdomains.objectives]]
+id = "D3.2.5"
+text = "Onboard servers to Defender for Servers in Defender for Cloud, including hybrid and multicloud scenarios"
+prior_cert = "none"
+hours = 2.5
+week = 4
+high_risk = true
+
+[[domains.subdomains.objectives]]
+id = "D3.2.6"
+text = "Configure Defender for Servers settings, including vulnerability scanning, and endpoint detection and response (EDR)"
+prior_cert = "none"
+hours = 2
+week = 4
+
+[[domains.subdomains.objectives]]
+id = "D3.2.7"
+text = "Implement and manage agentless scanning for VMs in Defender for Servers"
+prior_cert = "none"
+hours = 1.5
+week = 4
+
+[[domains.subdomains.objectives]]
+id = "D3.2.8"
+text = "Configure security features on a VM, including secure boot, virtual Trusted Platform Module (vTPM), integrity monitoring, and security type"
+prior_cert = "none"
+hours = 2
+week = 4
+
+[[domains.subdomains.objectives]]
+id = "D3.2.9"
+text = "Enforce security configuration of Azure-managed servers by using Azure Machine Configuration"
+prior_cert = "none"
+hours = 2
+week = 4
+
+[[domains.subdomains]]
+id = "D3.3"
+title = "Implement security for application platform services"
+learn_path = ""
+[[domains.subdomains.objectives]]
+id = "D3.3.1"
+text = "Detect misconfigurations and runtime risks in container workloads by using Defender for Containers"
+prior_cert = "none"
+hours = 2.5
+week = 4
+
+[[domains.subdomains.objectives]]
+id = "D3.3.2"
+text = "Implement and configure security controls for Azure Kubernetes Service (AKS)"
+prior_cert = "none"
+hours = 2.5
+week = 4
+high_risk = true
+
+[[domains.subdomains.objectives]]
+id = "D3.3.3"
+text = "Implement and configure security controls for Azure Container Registry"
+prior_cert = "none"
+hours = 2
+week = 4
+
+[[domains.subdomains.objectives]]
+id = "D3.3.4"
+text = "Implement and configure security controls for Azure Container Instances and Azure Container Apps"
+prior_cert = "none"
+hours = 2
+week = 4
+
+[[domains.subdomains.objectives]]
+id = "D3.3.5"
+text = "Implement and configure security controls for Azure Functions, including authentication and network access"
+prior_cert = "none"
+hours = 2
+week = 4
+
+[[domains.subdomains.objectives]]
+id = "D3.3.6"
+text = "Implement and configure security controls for Azure Logic Apps"
+prior_cert = "none"
+hours = 1.5
+week = 4
+
+[[domains.subdomains.objectives]]
+id = "D3.3.7"
+text = "Implement and configure security controls for Azure App Service"
+prior_cert = "none"
+hours = 2
+week = 4
+
+[[domains.subdomains.objectives]]
+id = "D3.3.8"
+text = "Implement and configure Azure Web Application Firewall"
+prior_cert = "none"
+hours = 2.5
+week = 4
+high_risk = true
+
+[[domains.subdomains.objectives]]
+id = "D3.3.9"
+text = "Implement security policies for back-end API protection by using API Management"
+prior_cert = "none"
+hours = 2
+week = 4
+
+
+# ===========================================================================
+[[domains]]
+id = "D4"
+title = "Manage and monitor security posture"
+weight_min = 20
+weight_max = 25
+sample_weight = 0.2369
+[[domains.subdomains]]
+id = "D4.1"
+title = "Manage security posture by using Defender for Cloud"
+learn_path = ""
+[[domains.subdomains.objectives]]
+id = "D4.1.1"
+text = "Identify security risks by using Defender CSPM"
+prior_cert = "none"
+hours = 2.5
+week = 5
+high_risk = true
+
+[[domains.subdomains.objectives]]
+id = "D4.1.2"
+text = "Evaluate compliance against security frameworks by using Defender for Cloud"
+prior_cert = "none"
+hours = 1.5
+week = 5
+
+[[domains.subdomains.objectives]]
+id = "D4.1.3"
+text = "Enable and configure Defender for Cloud workload protection plans"
+prior_cert = "none"
+hours = 2.5
+week = 5
+high_risk = true
+
+[[domains.subdomains.objectives]]
+id = "D4.1.4"
+text = "Connect hybrid cloud and multicloud environments to Defender for Cloud, including Amazon Web Services (AWS) and Google Cloud Platform (GCP)"
+prior_cert = "none"
+hours = 2
+week = 5
+
+[[domains.subdomains.objectives]]
+id = "D4.1.5"
+text = "Configure Microsoft Defender Vulnerability Management settings for Azure VMs"
+prior_cert = "none"
+hours = 1.5
+week = 5
+
+[[domains.subdomains.objectives]]
+id = "D4.1.6"
+text = "Discover unprotected assets and vulnerabilities by using Microsoft Defender External Attack Surface Management (EASM)"
+prior_cert = "none"
+hours = 1.5
+week = 5
+
+[[domains.subdomains]]
+id = "D4.2"
+title = "Implement activity and event collection in Microsoft Sentinel"
+learn_path = ""
+[[domains.subdomains.objectives]]
+id = "D4.2.1"
+text = "Create and connect workspaces in Microsoft Sentinel"
+prior_cert = "soc-analyst"
+hours = 1
+week = 6
+quick_review = true
+
+[[domains.subdomains.objectives]]
+id = "D4.2.2"
+text = "Assign roles in Microsoft Sentinel"
+prior_cert = "soc-analyst"
+hours = 1
+week = 6
+quick_review = true
+
+[[domains.subdomains.objectives]]
+id = "D4.2.3"
+text = "Implement and use content hub solutions"
+prior_cert = "soc-analyst"
+hours = 1
+week = 6
+quick_review = true
+
+[[domains.subdomains.objectives]]
+id = "D4.2.4"
+text = "Configure and use Microsoft data connectors for Azure resources"
+prior_cert = "soc-analyst"
+hours = 1
+week = 6
+quick_review = true
+
+[[domains.subdomains.objectives]]
+id = "D4.2.5"
+text = "Implement and configure syslog and Common Event Format (CEF) event collections"
+prior_cert = "soc-analyst"
+hours = 1
+week = 6
+quick_review = true
+
+[[domains.subdomains.objectives]]
+id = "D4.2.6"
+text = "Implement and configure collection of Windows Security events by using data collection rules, including Windows Event Forwarding (WEF)"
+prior_cert = "soc-analyst"
+hours = 1.5
+week = 6
+quick_review = true
+
+[[domains.subdomains.objectives]]
+id = "D4.2.7"
+text = "Create custom log tables in the workspace to store ingested data"
+prior_cert = "soc-analyst"
+hours = 1
+week = 6
+quick_review = true
+
+[[domains.subdomains.objectives]]
+id = "D4.2.8"
+text = "Implement automation rules and playbooks in Microsoft Sentinel"
+prior_cert = "soc-analyst"
+hours = 1
+week = 6
+quick_review = true
+
+[[domains.subdomains.objectives]]
+id = "D4.2.9"
+text = "Implement data retention in Microsoft Sentinel data stores"
+prior_cert = "soc-analyst"
+hours = 1.5
+week = 6
+high_risk = true
+quick_review = true
+
+[[domains.subdomains.objectives]]
+id = "D4.2.10"
+text = "Query Microsoft Purview Audit in Defender XDR"
+prior_cert = "soc-analyst"
+hours = 1
+week = 6
+license_blocked = true
+quick_review = true
+
+[[domains.subdomains]]
+id = "D4.3"
+title = "Implement Microsoft Security Copilot"
+learn_path = ""
+[[domains.subdomains.objectives]]
+id = "D4.3.1"
+text = "Configure workspaces for Security Copilot"
+prior_cert = "soc-analyst"
+hours = 1
+week = 6
+license_blocked = true
+quick_review = true
+
+[[domains.subdomains.objectives]]
+id = "D4.3.2"
+text = "Manage permissions and roles in Security Copilot"
+prior_cert = "soc-analyst"
+hours = 1
+week = 6
+license_blocked = true
+quick_review = true
+
+[[domains.subdomains.objectives]]
+id = "D4.3.3"
+text = "Enable and configure plugins"
+prior_cert = "soc-analyst"
+hours = 1
+week = 6
+license_blocked = true
+quick_review = true
+
+[[domains.subdomains.objectives]]
+id = "D4.3.4"
+text = "Enable and configure Microsoft agents and Security Store agents"
+prior_cert = "soc-analyst"
+hours = 1
+week = 6
+license_blocked = true
+quick_review = true
+

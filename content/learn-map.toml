@@ -1,0 +1,4055 @@
+# SC-500 official Microsoft Learn training map.
+#
+# The join between the skills-measured outline (content/domains.toml) and the official training
+# curriculum. Each unit maps to the blueprint bullet(s) it serves. The mismatches matter: bullets with
+# no unit are written from product docs, off-blueprint units are Skip-section material.
+#
+# CAPTURED 2026-11-15 from the Microsoft Learn catalog API (course SC-500T00 "Implement end-to-end
+# security controls for cloud and AI workloads" -> its 12 learning paths -> 62 unique modules -> 412 units).
+# Unit slugs were read from each live module page (two modules use unnumbered slugs). The module
+# "evaluate-regulatory-compliance" is listed in two paths (P3 governance and P10 posture); it is recorded once under P3.
+# Unit -> bullet mapping is by unit title and module scope; objective writers fetch the units they
+# cite and correct this file (log changes in content/CHANGELOG.md).
+#
+# MISMATCHES (the reason this file exists):
+#
+#   Bullets with NO training unit (3) -> write entirely from product docs:
+#     D1.1.2
+#     D1.1.4
+#     D1.1.6
+#
+#   Bullets carried by a SINGLE unit (25) -> thin; supplement from docs:
+#     D1.1.5  <- copilot-declarative-agent-api-plugin-auth#4
+#     D1.2.1  <- configure-secure-key-vault#2
+#     D1.2.3  <- configure-secure-key-vault#3
+#     D1.2.4  <- configure-secure-key-vault#4
+#     D1.2.6  <- defend-key-vault-defender-cloud#2
+#     D1.3.4  <- enforce-governance-azure-policy-resource-locks#4
+#     D1.3.5  <- manage-right-size-rbac-role-assignments#2
+#     D1.3.6  <- manage-right-size-rbac-role-assignments#3
+#     D1.3.7  <- manage-right-size-rbac-role-assignments#4
+#     D2.3.2  <- segment-isolate-workloads-network-security-controls#5
+#     D2.3.3  <- centralize-traffic-inspection-azure-firewall#4
+#     D2.3.5  <- secure-hybrid-connectivity-azure#4
+#     D2.3.7  <- eliminate-public-exposure-paas-private-link#4
+#     D2.3.9  <- segment-isolate-workloads-network-security-controls#6
+#     D3.1.1  <- identify-ai-data-risks-purview#3
+#     D3.2.5  <- implement-microsoft-defender-servers#2
+#     D3.2.7  <- implement-microsoft-defender-servers#4
+#     D3.3.3  <- implement-security-controls-containers#2
+#     D3.3.6  <- implement-security-controls-function-logic-apps#4
+#     D4.2.2  <- create-manage-azure-sentinel-workspaces#5
+#     D4.2.3  <- manage-content-microsoft-sentinel#2
+#     D4.2.7  <- manage-data-storage-audit-logs-sentinel#2
+#     D4.2.9  <- manage-data-storage-audit-logs-sentinel#3
+#     D4.3.2  <- configure-security-copilot-workspaces#4
+#     D4.3.3  <- manage-plugins-agents-security-copilot#2
+#
+#   Off-blueprint units: 15 (off_blueprint = true; Skip-section fuel).
+#   license_blocked exercise units: 0.
+
+schema_version = 1
+captured = 2026-11-15
+unit_total = 412
+source = "https://learn.microsoft.com/training/courses/sc-500t00"
+
+[[paths]]
+id = "P1"
+domain = "D1"
+title = "Secure access to resources by using Microsoft Entra"
+url = "https://learn.microsoft.com/training/paths/secure-access-resources-entra/"
+modules = 3
+
+[[paths]]
+id = "P2"
+domain = "D1"
+title = "Secure Azure Key Vault with defense in depth for the cloud and AI workloads"
+url = "https://learn.microsoft.com/training/paths/configure-key-vault-security/"
+modules = 4
+
+[[paths]]
+id = "P3"
+domain = "D1"
+title = "Enforce security governance and regulatory compliance"
+url = "https://learn.microsoft.com/training/paths/security-governance-compliance/"
+modules = 6
+
+[[paths]]
+id = "P4"
+domain = "D2"
+title = "Implement security for Azure Storage for the cloud and AI security engineer"
+url = "https://learn.microsoft.com/training/paths/implement-azure-storage-security/"
+modules = 4
+
+[[paths]]
+id = "P5"
+domain = "D2"
+title = "Implement security for Azure SQL databases"
+url = "https://learn.microsoft.com/training/paths/implement-azure-sql-database-security/"
+modules = 3
+
+[[paths]]
+id = "P6"
+domain = "D2"
+title = "Implement network security controls in Azure"
+url = "https://learn.microsoft.com/training/paths/implement-network-security-controls-azure/"
+modules = 4
+
+[[paths]]
+id = "P7"
+domain = "D3"
+title = "Implement security for AI"
+url = "https://learn.microsoft.com/training/paths/implement-ai-security/"
+modules = 9
+
+[[paths]]
+id = "P8"
+domain = "D3"
+title = "Implement security for servers and virtual machines"
+url = "https://learn.microsoft.com/training/paths/server-vm-security/"
+modules = 7
+
+[[paths]]
+id = "P9"
+domain = "D3"
+title = "Secure Azure application platform services for the cloud and AI security engineer"
+url = "https://learn.microsoft.com/training/paths/secure-application-platform-services/"
+modules = 6
+
+[[paths]]
+id = "P10"
+domain = "D4"
+title = "Manage security posture by using Microsoft Defender for Cloud"
+url = "https://learn.microsoft.com/training/paths/manage-security-posture-defender-cloud/"
+modules = 6
+
+[[paths]]
+id = "P11"
+domain = "D4"
+title = "Implement activity and event collection in Microsoft Sentinel"
+url = "https://learn.microsoft.com/training/paths/implement-activity-event-collection-sentinel/"
+modules = 8
+
+[[paths]]
+id = "P12"
+domain = "D4"
+title = "Deploy and operate Microsoft Security Copilot"
+url = "https://learn.microsoft.com/training/paths/deploy-operate-security-copilot/"
+modules = 3
+
+[[modules]]
+slug = "manage-implement-authentication-methods"
+path = "P1"
+title = "Manage and implement authentication methods in Microsoft Entra ID"
+url = "https://learn.microsoft.com/training/modules/manage-implement-authentication-methods/"
+unit_count = 8
+level = "Intermediate"
+exam_native = true
+
+[[modules]]
+slug = "implement-configure-privileged-identity-management"
+path = "P1"
+title = "Implement and configure Privileged Identity Management (PIM)"
+url = "https://learn.microsoft.com/training/modules/implement-configure-privileged-identity-management/"
+unit_count = 10
+level = "Intermediate"
+exam_native = true
+
+[[modules]]
+slug = "copilot-declarative-agent-api-plugin-auth"
+path = "P1"
+title = "Authenticate your API plugin for declarative agents with secured APIs"
+url = "https://learn.microsoft.com/training/modules/copilot-declarative-agent-api-plugin-auth/"
+unit_count = 7
+level = "Intermediate"
+exam_native = true
+
+[[modules]]
+slug = "configure-secure-key-vault"
+path = "P2"
+title = "Configure and secure Azure Key Vault"
+url = "https://learn.microsoft.com/training/modules/configure-secure-key-vault/"
+unit_count = 6
+level = "Intermediate"
+exam_native = true
+
+[[modules]]
+slug = "manage-keys-secrets-key-vault"
+path = "P2"
+title = "Manage keys and secrets in Azure Key Vault"
+url = "https://learn.microsoft.com/training/modules/manage-keys-secrets-key-vault/"
+unit_count = 5
+level = "Intermediate"
+exam_native = true
+
+[[modules]]
+slug = "manage-certificates-monitor-key-vault"
+path = "P2"
+title = "Manage certificates and monitor Azure Key Vault"
+url = "https://learn.microsoft.com/training/modules/manage-certificates-monitor-key-vault/"
+unit_count = 5
+level = "Intermediate"
+exam_native = true
+
+[[modules]]
+slug = "defend-key-vault-defender-cloud"
+path = "P2"
+title = "Protect Azure Key Vault with Microsoft Defender for Cloud"
+url = "https://learn.microsoft.com/training/modules/defend-key-vault-defender-cloud/"
+unit_count = 6
+level = "Intermediate"
+exam_native = true
+
+[[modules]]
+slug = "enforce-governance-azure-policy-resource-locks"
+path = "P3"
+title = "Enforce governance with Azure Policy and resource locks"
+url = "https://learn.microsoft.com/training/modules/enforce-governance-azure-policy-resource-locks/"
+unit_count = 6
+level = "Intermediate"
+exam_native = true
+
+[[modules]]
+slug = "configure-defender-cloud-security-controls"
+path = "P3"
+title = "Configure security controls and remediate recommendations in Defender for Cloud"
+url = "https://learn.microsoft.com/training/modules/configure-defender-cloud-security-controls/"
+unit_count = 5
+level = "Intermediate"
+exam_native = true
+
+[[modules]]
+slug = "evaluate-regulatory-compliance"
+path = "P3"
+title = "Evaluate regulatory compliance in Defender for Cloud"
+url = "https://learn.microsoft.com/training/modules/evaluate-regulatory-compliance/"
+unit_count = 6
+level = "Intermediate"
+exam_native = true
+
+[[modules]]
+slug = "manage-right-size-rbac-role-assignments"
+path = "P3"
+title = "Manage and right-size RBAC role assignments for least privilege"
+url = "https://learn.microsoft.com/training/modules/manage-right-size-rbac-role-assignments/"
+unit_count = 6
+level = "Intermediate"
+exam_native = true
+
+[[modules]]
+slug = "protect-backup-data-azure-backup-security"
+path = "P3"
+title = "Protect backup data with Azure Backup security features"
+url = "https://learn.microsoft.com/training/modules/protect-backup-data-azure-backup-security/"
+unit_count = 5
+level = "Intermediate"
+exam_native = true
+
+[[modules]]
+slug = "implement-security-controls-infrastructure-as-code"
+path = "P3"
+title = "Implement security controls in infrastructure as code"
+url = "https://learn.microsoft.com/training/modules/implement-security-controls-infrastructure-as-code/"
+unit_count = 5
+level = "Intermediate"
+exam_native = true
+
+[[modules]]
+slug = "describe-azure-storage-services"
+path = "P4"
+title = "Describe Azure storage services"
+url = "https://learn.microsoft.com/training/modules/describe-azure-storage-services/"
+unit_count = 8
+level = "Beginner"
+exam_native = true
+
+[[modules]]
+slug = "implement-storage-account-security"
+path = "P4"
+title = "Implement security and manage access for Azure Storage"
+url = "https://learn.microsoft.com/training/modules/implement-storage-account-security/"
+unit_count = 7
+level = "Intermediate"
+exam_native = true
+
+[[modules]]
+slug = "configure-network-security-azure-storage"
+path = "P4"
+title = "Configure network security for Azure Storage"
+url = "https://learn.microsoft.com/training/modules/configure-network-security-azure-storage/"
+unit_count = 7
+level = "Intermediate"
+exam_native = true
+
+[[modules]]
+slug = "implement-defender-storage"
+path = "P4"
+title = "Implement Microsoft Defender for Storage"
+url = "https://learn.microsoft.com/training/modules/implement-defender-storage/"
+unit_count = 7
+level = "Intermediate"
+exam_native = true
+
+[[modules]]
+slug = "configure-azure-sql-platform-security"
+path = "P5"
+title = "Configure platform-level security for Azure SQL"
+url = "https://learn.microsoft.com/training/modules/configure-azure-sql-platform-security/"
+unit_count = 7
+level = "Intermediate"
+exam_native = true
+
+[[modules]]
+slug = "configure-azure-sql-auditing"
+path = "P5"
+title = "Configure auditing for Azure SQL Database and SQL Managed Instance"
+url = "https://learn.microsoft.com/training/modules/configure-azure-sql-auditing/"
+unit_count = 7
+level = "Intermediate"
+exam_native = true
+
+[[modules]]
+slug = "implement-defender-databases"
+path = "P5"
+title = "Implement Microsoft Defender for Databases"
+url = "https://learn.microsoft.com/training/modules/implement-defender-databases/"
+unit_count = 8
+level = "Intermediate"
+exam_native = true
+
+[[modules]]
+slug = "segment-isolate-workloads-network-security-controls"
+path = "P6"
+title = "Segment and isolate Azure workloads using network security controls"
+url = "https://learn.microsoft.com/training/modules/segment-isolate-workloads-network-security-controls/"
+unit_count = 8
+level = "Intermediate"
+exam_native = true
+
+[[modules]]
+slug = "centralize-traffic-inspection-azure-firewall"
+path = "P6"
+title = "Centralize and enforce traffic inspection using Azure Firewall"
+url = "https://learn.microsoft.com/training/modules/centralize-traffic-inspection-azure-firewall/"
+unit_count = 6
+level = "Intermediate"
+exam_native = true
+
+[[modules]]
+slug = "secure-hybrid-connectivity-azure"
+path = "P6"
+title = "Secure remote and hybrid connectivity using VPN gateways and Microsoft Entra Private Access"
+url = "https://learn.microsoft.com/training/modules/secure-hybrid-connectivity-azure/"
+unit_count = 6
+level = "Intermediate"
+exam_native = true
+
+[[modules]]
+slug = "eliminate-public-exposure-paas-private-link"
+path = "P6"
+title = "Eliminate public network exposure of Azure PaaS services"
+url = "https://learn.microsoft.com/training/modules/eliminate-public-exposure-paas-private-link/"
+unit_count = 7
+level = "Intermediate"
+exam_native = true
+
+[[modules]]
+slug = "secure-access-entra-agent-identity"
+path = "P7"
+title = "Secure access for Microsoft Entra Agent Identity"
+url = "https://learn.microsoft.com/training/modules/secure-access-entra-agent-identity/"
+unit_count = 6
+level = "Intermediate"
+exam_native = true
+
+[[modules]]
+slug = "analyze-ai-identity-risks-defender-xdr"
+path = "P7"
+title = "Analyze AI identity risks using Microsoft Defender XDR"
+url = "https://learn.microsoft.com/training/modules/analyze-ai-identity-risks-defender-xdr/"
+unit_count = 5
+level = "Intermediate"
+exam_native = true
+
+[[modules]]
+slug = "enable-protection-copilot-studio-agents"
+path = "P7"
+title = "Enable real-time protection for Copilot Studio agents"
+url = "https://learn.microsoft.com/training/modules/enable-protection-copilot-studio-agents/"
+unit_count = 6
+level = "Intermediate"
+exam_native = true
+
+[[modules]]
+slug = "configure-ai-gateway-security-foundry"
+path = "P7"
+title = "Configure AI Gateway security in Microsoft Foundry"
+url = "https://learn.microsoft.com/training/modules/configure-ai-gateway-security-foundry/"
+unit_count = 6
+level = "Intermediate"
+exam_native = true
+
+[[modules]]
+slug = "azure-ai-foundry-configure-manage-guardrails"
+path = "P7"
+title = "Configure and manage guardrails in Microsoft Foundry"
+url = "https://learn.microsoft.com/training/modules/azure-ai-foundry-configure-manage-guardrails/"
+unit_count = 9
+level = "Intermediate"
+exam_native = true
+
+[[modules]]
+slug = "defender-for-cloud-ai-protect-workloads"
+path = "P7"
+title = "Protect AI workloads with Microsoft Defender for Cloud"
+url = "https://learn.microsoft.com/training/modules/defender-for-cloud-ai-protect-workloads/"
+unit_count = 8
+level = "Intermediate"
+exam_native = true
+
+[[modules]]
+slug = "implement-defender-cloud-ai-services"
+path = "P7"
+title = "Enable Defender for AI Services workload protection in Microsoft Defender for Cloud"
+url = "https://learn.microsoft.com/training/modules/implement-defender-cloud-ai-services/"
+unit_count = 5
+level = "Intermediate"
+exam_native = true
+
+[[modules]]
+slug = "manage-agents-microsoft-agent-365"
+path = "P7"
+title = "Manage agents using Microsoft Agent 365"
+url = "https://learn.microsoft.com/training/modules/manage-agents-microsoft-agent-365/"
+unit_count = 6
+level = "Intermediate"
+exam_native = true
+
+[[modules]]
+slug = "identify-ai-data-risks-purview"
+path = "P7"
+title = "Identify AI data risks using Microsoft Purview Data Security Posture Management"
+url = "https://learn.microsoft.com/training/modules/identify-ai-data-risks-purview/"
+unit_count = 6
+level = "Intermediate"
+exam_native = true
+
+[[modules]]
+slug = "implement-disk-encryption-azure-virtual-machines"
+path = "P8"
+title = "Implement disk encryption for Azure virtual machines"
+url = "https://learn.microsoft.com/training/modules/implement-disk-encryption-azure-virtual-machines/"
+unit_count = 6
+level = "Intermediate"
+exam_native = true
+
+[[modules]]
+slug = "configure-trusted-launch-azure-virtual-machines"
+path = "P8"
+title = "Configure trusted launch security features for Azure virtual machines"
+url = "https://learn.microsoft.com/training/modules/configure-trusted-launch-azure-virtual-machines/"
+unit_count = 7
+level = "Intermediate"
+exam_native = true
+
+[[modules]]
+slug = "plan-implement-azure-bastion"
+path = "P8"
+title = "Plan and implement Azure Bastion"
+url = "https://learn.microsoft.com/training/modules/plan-implement-azure-bastion/"
+unit_count = 6
+level = "Intermediate"
+exam_native = true
+
+[[modules]]
+slug = "manage-security-azure-arc-servers"
+path = "P8"
+title = "Manage security for Arc-enabled hybrid servers"
+url = "https://learn.microsoft.com/training/modules/manage-security-azure-arc-servers/"
+unit_count = 6
+level = "Intermediate"
+exam_native = true
+
+[[modules]]
+slug = "implement-microsoft-defender-servers"
+path = "P8"
+title = "Implement Microsoft Defender for Servers"
+url = "https://learn.microsoft.com/training/modules/implement-microsoft-defender-servers/"
+unit_count = 6
+level = "Intermediate"
+exam_native = true
+
+[[modules]]
+slug = "enable-enforce-just-in-time-vm-access"
+path = "P8"
+title = "Enable and enforce just-in-time VM access"
+url = "https://learn.microsoft.com/training/modules/enable-enforce-just-in-time-vm-access/"
+unit_count = 6
+level = "Intermediate"
+exam_native = true
+
+[[modules]]
+slug = "enforce-vm-security-machine-configuration"
+path = "P8"
+title = "Enforce VM security configuration with Azure Machine Configuration"
+url = "https://learn.microsoft.com/training/modules/enforce-vm-security-machine-configuration/"
+unit_count = 6
+level = "Intermediate"
+exam_native = true
+
+[[modules]]
+slug = "detect-container-risks-defender-containers"
+path = "P9"
+title = "Detect container risks using Microsoft Defender for Containers"
+url = "https://learn.microsoft.com/training/modules/detect-container-risks-defender-containers/"
+unit_count = 7
+level = "Intermediate"
+exam_native = true
+
+[[modules]]
+slug = "implement-security-controls-kubernetes"
+path = "P9"
+title = "Implement security controls for Azure Kubernetes Service"
+url = "https://learn.microsoft.com/training/modules/implement-security-controls-kubernetes/"
+unit_count = 7
+level = "Intermediate"
+exam_native = true
+
+[[modules]]
+slug = "implement-security-controls-containers"
+path = "P9"
+title = "Implement security controls for Azure Container Registry, Container Instances, and Container Apps"
+url = "https://learn.microsoft.com/training/modules/implement-security-controls-containers/"
+unit_count = 6
+level = "Intermediate"
+exam_native = true
+
+[[modules]]
+slug = "implement-security-controls-function-logic-apps"
+path = "P9"
+title = "Implement security controls for Azure Function apps and Logic apps"
+url = "https://learn.microsoft.com/training/modules/implement-security-controls-function-logic-apps/"
+unit_count = 6
+level = "Intermediate"
+exam_native = true
+
+[[modules]]
+slug = "implement-security-web-application-firewall"
+path = "P9"
+title = "Implement security controls for Azure App Services and Web Application Firewall"
+url = "https://learn.microsoft.com/training/modules/implement-security-web-application-firewall/"
+unit_count = 6
+level = "Intermediate"
+exam_native = true
+
+[[modules]]
+slug = "implement-application-interface-security-management"
+path = "P9"
+title = "Implement API backend security using Azure API Management"
+url = "https://learn.microsoft.com/training/modules/implement-application-interface-security-management/"
+unit_count = 7
+level = "Intermediate"
+exam_native = true
+
+[[modules]]
+slug = "connect-hybrid-multicloud-environments-defender"
+path = "P10"
+title = "Connect hybrid and multicloud environments to Microsoft Defender for Cloud"
+url = "https://learn.microsoft.com/training/modules/connect-hybrid-multicloud-environments-defender/"
+unit_count = 9
+level = "Intermediate"
+exam_native = true
+
+[[modules]]
+slug = "identify-security-risks-posture-management"
+path = "P10"
+title = "Identify security risks by using Cloud Security Posture Management"
+url = "https://learn.microsoft.com/training/modules/identify-security-risks-posture-management/"
+unit_count = 7
+level = "Intermediate"
+exam_native = true
+
+[[modules]]
+slug = "discover-external-assets-vulnerabilities"
+path = "P10"
+title = "Discover unprotected assets and vulnerabilities by using Microsoft Defender External Attack Surface Management"
+url = "https://learn.microsoft.com/training/modules/discover-external-assets-vulnerabilities/"
+unit_count = 7
+level = "Intermediate"
+exam_native = true
+
+[[modules]]
+slug = "enable-configure-workload-protection-plans"
+path = "P10"
+title = "Enable and configure workload protection plans in Microsoft Defender for Cloud"
+url = "https://learn.microsoft.com/training/modules/enable-configure-workload-protection-plans/"
+unit_count = 7
+level = "Intermediate"
+exam_native = true
+
+[[modules]]
+slug = "configure-defender-vulnerability-management"
+path = "P10"
+title = "Configure Microsoft Defender Vulnerability Management settings for Azure VMs"
+url = "https://learn.microsoft.com/training/modules/configure-defender-vulnerability-management/"
+unit_count = 7
+level = "Intermediate"
+exam_native = true
+
+[[modules]]
+slug = "create-manage-azure-sentinel-workspaces"
+path = "P11"
+title = "Create and manage Microsoft Sentinel workspaces"
+url = "https://learn.microsoft.com/training/modules/create-manage-azure-sentinel-workspaces/"
+unit_count = 9
+level = "Intermediate"
+exam_native = true
+
+[[modules]]
+slug = "manage-content-microsoft-sentinel"
+path = "P11"
+title = "Manage content in Microsoft Sentinel"
+url = "https://learn.microsoft.com/training/modules/manage-content-microsoft-sentinel/"
+unit_count = 5
+level = "Intermediate"
+exam_native = true
+
+[[modules]]
+slug = "connect-microsoft-services-to-azure-sentinel"
+path = "P11"
+title = "Connect Microsoft services to Microsoft Sentinel"
+url = "https://learn.microsoft.com/training/modules/connect-microsoft-services-to-azure-sentinel/"
+unit_count = 8
+level = "Intermediate"
+exam_native = true
+
+[[modules]]
+slug = "connect-syslog-data-sources-to-azure-sentinel"
+path = "P11"
+title = "Connect syslog data sources to Microsoft Sentinel"
+url = "https://learn.microsoft.com/training/modules/connect-syslog-data-sources-to-azure-sentinel/"
+unit_count = 7
+level = "Intermediate"
+exam_native = true
+
+[[modules]]
+slug = "connect-common-event-format-logs-to-azure-sentinel"
+path = "P11"
+title = "Connect Common Event Format logs to Microsoft Sentinel"
+url = "https://learn.microsoft.com/training/modules/connect-common-event-format-logs-to-azure-sentinel/"
+unit_count = 5
+level = "Intermediate"
+exam_native = true
+
+[[modules]]
+slug = "connect-windows-hosts-to-azure-sentinel"
+path = "P11"
+title = "Connect Windows hosts to Microsoft Sentinel"
+url = "https://learn.microsoft.com/training/modules/connect-windows-hosts-to-azure-sentinel/"
+unit_count = 7
+level = "Intermediate"
+exam_native = true
+
+[[modules]]
+slug = "implement-automation-rules-playbooks-sentinel"
+path = "P11"
+title = "Implement automation rules and playbooks in Microsoft Sentinel"
+url = "https://learn.microsoft.com/training/modules/implement-automation-rules-playbooks-sentinel/"
+unit_count = 7
+level = "Intermediate"
+exam_native = true
+
+[[modules]]
+slug = "manage-data-storage-audit-logs-sentinel"
+path = "P11"
+title = "Manage data storage and query audit logs in Microsoft Sentinel"
+url = "https://learn.microsoft.com/training/modules/manage-data-storage-audit-logs-sentinel/"
+unit_count = 7
+level = "Intermediate"
+exam_native = true
+
+[[modules]]
+slug = "security-copilot-getting-started"
+path = "P12"
+title = "Describe Microsoft Security Copilot"
+url = "https://learn.microsoft.com/training/modules/security-copilot-getting-started/"
+unit_count = 8
+level = "Beginner"
+exam_native = true
+
+[[modules]]
+slug = "configure-security-copilot-workspaces"
+path = "P12"
+title = "Configure workspaces for Microsoft Security Copilot"
+url = "https://learn.microsoft.com/training/modules/configure-security-copilot-workspaces/"
+unit_count = 8
+level = "Intermediate"
+exam_native = true
+
+[[modules]]
+slug = "manage-plugins-agents-security-copilot"
+path = "P12"
+title = "Manage plugins and agents in Microsoft Security Copilot"
+url = "https://learn.microsoft.com/training/modules/manage-plugins-agents-security-copilot/"
+unit_count = 7
+level = "Intermediate"
+exam_native = true
+
+[[units]]
+module = "manage-implement-authentication-methods"
+n = 1
+slug = "1-introduction"
+title = "Introduction"
+kind = "intro"
+objectives = []
+
+[[units]]
+module = "manage-implement-authentication-methods"
+n = 2
+slug = "2-explore-authentication-methods"
+title = "Explore Microsoft Entra ID authentication methods"
+kind = "concept"
+objectives = ["D1.1.3"]
+
+[[units]]
+module = "manage-implement-authentication-methods"
+n = 3
+slug = "3-configure-mfa"
+title = "Configure multifactor authentication in Microsoft Entra ID"
+kind = "concept"
+objectives = ["D1.1.3"]
+
+[[units]]
+module = "manage-implement-authentication-methods"
+n = 4
+slug = "4-implement-passwordless-authentication"
+title = "Implement passwordless authentication in Microsoft Entra ID"
+kind = "concept"
+objectives = ["D1.1.3"]
+
+[[units]]
+module = "manage-implement-authentication-methods"
+n = 5
+slug = "5-configure-self-service-password-reset"
+title = "Configure self-service password reset in Microsoft Entra ID"
+kind = "concept"
+objectives = []
+off_blueprint = true
+note = "SSPR — not on the bullet; know it exists"
+
+[[units]]
+module = "manage-implement-authentication-methods"
+n = 6
+slug = "6-exercise-configure-authentication-methods"
+title = "Exercise - Configure authentication methods in Microsoft Entra ID"
+kind = "exercise"
+objectives = ["D1.1.3"]
+
+[[units]]
+module = "manage-implement-authentication-methods"
+n = 7
+slug = "7-knowledge-check"
+title = "Module assessment"
+kind = "assessment"
+objectives = []
+
+[[units]]
+module = "manage-implement-authentication-methods"
+n = 8
+slug = "8-summary"
+title = "Summary"
+kind = "summary"
+objectives = []
+
+[[units]]
+module = "implement-configure-privileged-identity-management"
+n = 1
+slug = "1-introduction"
+title = "Introduction"
+kind = "intro"
+objectives = []
+
+[[units]]
+module = "implement-configure-privileged-identity-management"
+n = 2
+slug = "2-explain-privileged-just-in-time-access"
+title = "Why Privileged Identity Management and just-in-time access matter"
+kind = "concept"
+objectives = ["D1.1.1"]
+license_blocked = true
+
+[[units]]
+module = "implement-configure-privileged-identity-management"
+n = 3
+slug = "3-explore-privileged-identity-features"
+title = "Core capabilities of Privileged Identity Management (PIM)"
+kind = "concept"
+objectives = ["D1.1.1"]
+license_blocked = true
+
+[[units]]
+module = "implement-configure-privileged-identity-management"
+n = 4
+slug = "4-implement-just-in-time-entra-roles"
+title = "Implement just-in-time access for Microsoft Entra roles"
+kind = "concept"
+objectives = ["D1.1.1"]
+license_blocked = true
+
+[[units]]
+module = "implement-configure-privileged-identity-management"
+n = 5
+slug = "5-implement-just-in-time-azure-roles-resources"
+title = "Implement just-in-time access for Azure roles and resources"
+kind = "concept"
+objectives = ["D1.1.1"]
+license_blocked = true
+
+[[units]]
+module = "implement-configure-privileged-identity-management"
+n = 6
+slug = "6-explore-privileged-access-groups"
+title = "Scaling with PIM for Groups"
+kind = "concept"
+objectives = ["D1.1.1"]
+license_blocked = true
+
+[[units]]
+module = "implement-configure-privileged-identity-management"
+n = 7
+slug = "7-apply-privilege-workloads-agents-apps"
+title = "Applying JIT access to AI workloads, agents, and applications"
+kind = "concept"
+objectives = ["D1.1.1", "D1.1.6"]
+
+[[units]]
+module = "implement-configure-privileged-identity-management"
+n = 8
+slug = "8-review-design-patterns"
+title = "JIT design patterns and best practices"
+kind = "concept"
+objectives = ["D1.1.1"]
+license_blocked = true
+
+[[units]]
+module = "implement-configure-privileged-identity-management"
+n = 9
+slug = "9-knowledge-check"
+title = "Module assessment"
+kind = "assessment"
+objectives = []
+
+[[units]]
+module = "implement-configure-privileged-identity-management"
+n = 10
+slug = "10-summary"
+title = "Summary"
+kind = "summary"
+objectives = []
+
+[[units]]
+module = "copilot-declarative-agent-api-plugin-auth"
+n = 1
+slug = "1-introduction"
+title = "Introduction"
+kind = "intro"
+objectives = []
+
+[[units]]
+module = "copilot-declarative-agent-api-plugin-auth"
+n = 2
+slug = "2-integrate-api-plugin-key"
+title = "Integrate an API plugin with an API secured with a key"
+kind = "concept"
+objectives = []
+off_blueprint = true
+note = "developer task: API-key auth for a Copilot plugin"
+
+[[units]]
+module = "copilot-declarative-agent-api-plugin-auth"
+n = 3
+slug = "3-exercise-integrate-api-plugin-key"
+title = "Exercise - Integrate an API plugin with an API secured with a key"
+kind = "exercise"
+objectives = []
+off_blueprint = true
+note = "developer exercise"
+
+[[units]]
+module = "copilot-declarative-agent-api-plugin-auth"
+n = 4
+slug = "4-integrate-api-plugin-oauth"
+title = "Integrate an API plugin with an API secured with OAuth"
+kind = "concept"
+objectives = ["D1.1.5"]
+
+[[units]]
+module = "copilot-declarative-agent-api-plugin-auth"
+n = 5
+slug = "5-exercise-integrate-api-plugin-oauth"
+title = "Exercise - Integrate an API plugin with an API secured with OAuth"
+kind = "exercise"
+objectives = []
+off_blueprint = true
+note = "developer exercise"
+
+[[units]]
+module = "copilot-declarative-agent-api-plugin-auth"
+n = 6
+slug = "6-knowledge-check"
+title = "Module assessment"
+kind = "assessment"
+objectives = []
+
+[[units]]
+module = "copilot-declarative-agent-api-plugin-auth"
+n = 7
+slug = "7-summary"
+title = "Summary"
+kind = "summary"
+objectives = []
+
+[[units]]
+module = "configure-secure-key-vault"
+n = 1
+slug = "1-introduction"
+title = "Introduction"
+kind = "intro"
+objectives = []
+
+[[units]]
+module = "configure-secure-key-vault"
+n = 2
+slug = "2-deploy-key-vault"
+title = "Deploy Azure Key Vault with security controls"
+kind = "concept"
+objectives = ["D1.2.1", "D1.2.2"]
+
+[[units]]
+module = "configure-secure-key-vault"
+n = 3
+slug = "3-configure-access"
+title = "Configure access to Azure Key Vault"
+kind = "concept"
+objectives = ["D1.2.3"]
+
+[[units]]
+module = "configure-secure-key-vault"
+n = 4
+slug = "4-configure-firewall-network"
+title = "Configure Key Vault firewall and network settings"
+kind = "concept"
+objectives = ["D1.2.4"]
+
+[[units]]
+module = "configure-secure-key-vault"
+n = 5
+slug = "5-knowledge-check"
+title = "Knowledge check"
+kind = "assessment"
+objectives = []
+
+[[units]]
+module = "configure-secure-key-vault"
+n = 6
+slug = "6-summary"
+title = "Summary"
+kind = "summary"
+objectives = []
+
+[[units]]
+module = "manage-keys-secrets-key-vault"
+n = 1
+slug = "1-introduction"
+title = "Introduction"
+kind = "intro"
+objectives = []
+
+[[units]]
+module = "manage-keys-secrets-key-vault"
+n = 2
+slug = "2-manage-keys"
+title = "Manage cryptographic keys in Azure Key Vault"
+kind = "concept"
+objectives = ["D1.2.5"]
+
+[[units]]
+module = "manage-keys-secrets-key-vault"
+n = 3
+slug = "3-manage-secrets"
+title = "Manage secrets in Azure Key Vault"
+kind = "concept"
+objectives = ["D1.2.5"]
+
+[[units]]
+module = "manage-keys-secrets-key-vault"
+n = 4
+slug = "4-knowledge-check"
+title = "Knowledge check"
+kind = "assessment"
+objectives = []
+
+[[units]]
+module = "manage-keys-secrets-key-vault"
+n = 5
+slug = "5-summary"
+title = "Summary"
+kind = "summary"
+objectives = []
+
+[[units]]
+module = "manage-certificates-monitor-key-vault"
+n = 1
+slug = "1-introduction"
+title = "Introduction"
+kind = "intro"
+objectives = []
+
+[[units]]
+module = "manage-certificates-monitor-key-vault"
+n = 2
+slug = "2-manage-certificates"
+title = "Manage certificates in Azure Key Vault"
+kind = "concept"
+objectives = ["D1.2.5"]
+
+[[units]]
+module = "manage-certificates-monitor-key-vault"
+n = 3
+slug = "3-enable-audit-logging"
+title = "Enable Key Vault audit logging"
+kind = "concept"
+objectives = ["D1.2.2"]
+
+[[units]]
+module = "manage-certificates-monitor-key-vault"
+n = 4
+slug = "4-knowledge-check"
+title = "Knowledge check"
+kind = "assessment"
+objectives = []
+
+[[units]]
+module = "manage-certificates-monitor-key-vault"
+n = 5
+slug = "5-summary"
+title = "Summary"
+kind = "summary"
+objectives = []
+
+[[units]]
+module = "defend-key-vault-defender-cloud"
+n = 1
+slug = "1-introduction"
+title = "Introduction"
+kind = "intro"
+objectives = []
+
+[[units]]
+module = "defend-key-vault-defender-cloud"
+n = 2
+slug = "2-posture-management-secret-scanning"
+title = "Scan for exposed secrets using Defender Cloud Security Posture Management (CSPM)"
+kind = "concept"
+objectives = ["D1.2.6"]
+
+[[units]]
+module = "defend-key-vault-defender-cloud"
+n = 3
+slug = "3-enable-defender-key-vault"
+title = "Enable Microsoft Defender for Key Vault"
+kind = "concept"
+objectives = ["D1.2.7"]
+
+[[units]]
+module = "defend-key-vault-defender-cloud"
+n = 4
+slug = "4-investigate-alerts"
+title = "Investigate and respond to Defender for Key Vault alerts"
+kind = "concept"
+objectives = ["D1.2.7"]
+
+[[units]]
+module = "defend-key-vault-defender-cloud"
+n = 5
+slug = "5-knowledge-check"
+title = "Knowledge check"
+kind = "assessment"
+objectives = []
+
+[[units]]
+module = "defend-key-vault-defender-cloud"
+n = 6
+slug = "6-summary"
+title = "Summary"
+kind = "summary"
+objectives = []
+
+[[units]]
+module = "enforce-governance-azure-policy-resource-locks"
+n = 1
+slug = "1-introduction"
+title = "Introduction"
+kind = "intro"
+objectives = []
+
+[[units]]
+module = "enforce-governance-azure-policy-resource-locks"
+n = 2
+slug = "2-assign-built-in-policy-definitions"
+title = "Assign built-in Azure Policy definitions"
+kind = "concept"
+objectives = ["D1.3.1"]
+
+[[units]]
+module = "enforce-governance-azure-policy-resource-locks"
+n = 3
+slug = "3-create-deploy-custom-policy-definitions"
+title = "Create and deploy custom policy definitions"
+kind = "concept"
+objectives = ["D1.3.1"]
+
+[[units]]
+module = "enforce-governance-azure-policy-resource-locks"
+n = 4
+slug = "4-implement-resource-locks"
+title = "Implement resource locks"
+kind = "concept"
+objectives = ["D1.3.4"]
+
+[[units]]
+module = "enforce-governance-azure-policy-resource-locks"
+n = 5
+slug = "5-knowledge-check"
+title = "Module assessment"
+kind = "assessment"
+objectives = []
+
+[[units]]
+module = "enforce-governance-azure-policy-resource-locks"
+n = 6
+slug = "6-summary"
+title = "Summary"
+kind = "summary"
+objectives = []
+
+[[units]]
+module = "configure-defender-cloud-security-controls"
+n = 1
+slug = "1-introduction"
+title = "Introduction"
+kind = "intro"
+objectives = []
+
+[[units]]
+module = "configure-defender-cloud-security-controls"
+n = 2
+slug = "2-configure-defender-cloud-security-standards"
+title = "Configure Defender for Cloud and manage security standards"
+kind = "concept"
+objectives = ["D1.3.3"]
+
+[[units]]
+module = "configure-defender-cloud-security-controls"
+n = 3
+slug = "3-deploy-remediation-controls-scale"
+title = "Deploy remediation controls at scale"
+kind = "concept"
+objectives = ["D1.3.3"]
+
+[[units]]
+module = "configure-defender-cloud-security-controls"
+n = 4
+slug = "4-knowledge-check"
+title = "Knowledge check"
+kind = "assessment"
+objectives = []
+
+[[units]]
+module = "configure-defender-cloud-security-controls"
+n = 5
+slug = "5-summary"
+title = "Summary"
+kind = "summary"
+objectives = []
+
+[[units]]
+module = "evaluate-regulatory-compliance"
+n = 1
+slug = "1-introduction"
+title = "Introduction"
+kind = "intro"
+objectives = []
+
+[[units]]
+module = "evaluate-regulatory-compliance"
+n = 2
+slug = "2-understand-compliance-standards-controls"
+title = "Understand compliance standards and controls in Defender for Cloud"
+kind = "concept"
+objectives = ["D1.3.2", "D4.1.2"]
+
+[[units]]
+module = "evaluate-regulatory-compliance"
+n = 3
+slug = "3-navigate-compliance-dashboard-investigate-gaps"
+title = "Navigate the regulatory compliance dashboard and investigate control gaps"
+kind = "concept"
+objectives = ["D1.3.2", "D4.1.2"]
+
+[[units]]
+module = "evaluate-regulatory-compliance"
+n = 4
+slug = "4-assign-standards-communicate-compliance-posture"
+title = "Assign standards and communicate compliance posture"
+kind = "concept"
+objectives = ["D1.3.2", "D1.3.3", "D4.1.2"]
+
+[[units]]
+module = "evaluate-regulatory-compliance"
+n = 5
+slug = "5-knowledge-check"
+title = "Knowledge check"
+kind = "assessment"
+objectives = []
+
+[[units]]
+module = "evaluate-regulatory-compliance"
+n = 6
+slug = "6-summary"
+title = "Summary"
+kind = "summary"
+objectives = []
+
+[[units]]
+module = "manage-right-size-rbac-role-assignments"
+n = 1
+slug = "1-introduction"
+title = "Introduction"
+kind = "intro"
+objectives = []
+
+[[units]]
+module = "manage-right-size-rbac-role-assignments"
+n = 2
+slug = "2-assign-manage-azure-built-in-roles"
+title = "Assign and manage Azure built-in roles"
+kind = "concept"
+objectives = ["D1.3.5"]
+
+[[units]]
+module = "manage-right-size-rbac-role-assignments"
+n = 3
+slug = "3-create-custom-azure-entra-roles"
+title = "Create custom Azure roles and Microsoft Entra roles"
+kind = "concept"
+objectives = ["D1.3.6"]
+
+[[units]]
+module = "manage-right-size-rbac-role-assignments"
+n = 4
+slug = "4-evaluate-remediate-overprivileged-access"
+title = "Evaluate and remediate overprivileged access"
+kind = "concept"
+objectives = ["D1.3.7"]
+
+[[units]]
+module = "manage-right-size-rbac-role-assignments"
+n = 5
+slug = "5-knowledge-check"
+title = "Knowledge check"
+kind = "assessment"
+objectives = []
+
+[[units]]
+module = "manage-right-size-rbac-role-assignments"
+n = 6
+slug = "6-summary"
+title = "Summary"
+kind = "summary"
+objectives = []
+
+[[units]]
+module = "protect-backup-data-azure-backup-security"
+n = 1
+slug = "1-introduction"
+title = "Introduction"
+kind = "intro"
+objectives = []
+
+[[units]]
+module = "protect-backup-data-azure-backup-security"
+n = 2
+slug = "2-enable-soft-delete-immutable-vaults"
+title = "Enable soft delete and immutable vaults"
+kind = "concept"
+objectives = ["D1.3.8"]
+
+[[units]]
+module = "protect-backup-data-azure-backup-security"
+n = 3
+slug = "3-configure-multi-user-authorization-rbac"
+title = "Configure Multi-User Authorization and RBAC for backup"
+kind = "concept"
+objectives = ["D1.3.8"]
+
+[[units]]
+module = "protect-backup-data-azure-backup-security"
+n = 4
+slug = "4-knowledge-check"
+title = "Knowledge check"
+kind = "assessment"
+objectives = []
+
+[[units]]
+module = "protect-backup-data-azure-backup-security"
+n = 5
+slug = "5-summary"
+title = "Summary"
+kind = "summary"
+objectives = []
+
+[[units]]
+module = "implement-security-controls-infrastructure-as-code"
+n = 1
+slug = "1-introduction"
+title = "Introduction"
+kind = "intro"
+objectives = []
+
+[[units]]
+module = "implement-security-controls-infrastructure-as-code"
+n = 2
+slug = "2-scan-iac-templates-defender-devops"
+title = "Scan IaC templates using Microsoft Defender for DevOps"
+kind = "concept"
+objectives = ["D1.3.9"]
+
+[[units]]
+module = "implement-security-controls-infrastructure-as-code"
+n = 3
+slug = "3-enforce-policy-compliance-iac-deployments"
+title = "Enforce policy compliance in IaC deployments"
+kind = "concept"
+objectives = ["D1.3.9"]
+
+[[units]]
+module = "implement-security-controls-infrastructure-as-code"
+n = 4
+slug = "4-knowledge-check"
+title = "Knowledge check"
+kind = "assessment"
+objectives = []
+
+[[units]]
+module = "implement-security-controls-infrastructure-as-code"
+n = 5
+slug = "5-summary"
+title = "Summary"
+kind = "summary"
+objectives = []
+
+[[units]]
+module = "describe-azure-storage-services"
+n = 1
+slug = "1-introduction"
+title = "Introduction"
+kind = "intro"
+objectives = []
+
+[[units]]
+module = "describe-azure-storage-services"
+n = 2
+slug = "2-accounts"
+title = "Describe Azure storage accounts"
+kind = "concept"
+objectives = ["D2.1.1"]
+
+[[units]]
+module = "describe-azure-storage-services"
+n = 3
+slug = "3-redundancy"
+title = "Describe Azure storage redundancy"
+kind = "concept"
+objectives = []
+off_blueprint = true
+note = "redundancy is an availability topic, not a security control"
+
+[[units]]
+module = "describe-azure-storage-services"
+n = 4
+slug = "4-describe-azure-storage-services"
+title = "Describe Azure storage services"
+kind = "concept"
+objectives = []
+off_blueprint = true
+note = "service catalogue — foundation material"
+
+[[units]]
+module = "describe-azure-storage-services"
+n = 5
+slug = "6-identify-azure-data-migration-options"
+title = "Identify Azure data migration options"
+kind = "concept"
+objectives = []
+off_blueprint = true
+note = "data migration tools"
+
+[[units]]
+module = "describe-azure-storage-services"
+n = 6
+slug = "7-identify-azure-file-movement-options"
+title = "Identify Azure file movement options"
+kind = "concept"
+objectives = []
+off_blueprint = true
+note = "AzCopy / Storage Explorer file movement"
+
+[[units]]
+module = "describe-azure-storage-services"
+n = 7
+slug = "8-knowledge-check"
+title = "Module assessment"
+kind = "assessment"
+objectives = []
+
+[[units]]
+module = "describe-azure-storage-services"
+n = 8
+slug = "9-summary"
+title = "Summary"
+kind = "summary"
+objectives = []
+
+[[units]]
+module = "implement-storage-account-security"
+n = 1
+slug = "1-introduction"
+title = "Introduction"
+kind = "intro"
+objectives = []
+
+[[units]]
+module = "implement-storage-account-security"
+n = 2
+slug = "2-configure-storage-account-security"
+title = "Configure storage account security settings"
+kind = "concept"
+objectives = ["D2.1.1"]
+
+[[units]]
+module = "implement-storage-account-security"
+n = 3
+slug = "3-select-authorization-model"
+title = "Select an authorization model for Azure Storage"
+kind = "concept"
+objectives = ["D2.1.4"]
+
+[[units]]
+module = "implement-storage-account-security"
+n = 4
+slug = "4-manage-stored-access-policies"
+title = "Manage access with stored access policies"
+kind = "concept"
+objectives = ["D2.1.4"]
+
+[[units]]
+module = "implement-storage-account-security"
+n = 5
+slug = "5-disable-shared-key-enforce-policy"
+title = "Disable Shared Key authorization and enforce with Azure Policy"
+kind = "concept"
+objectives = ["D2.1.1", "D2.1.4"]
+
+[[units]]
+module = "implement-storage-account-security"
+n = 6
+slug = "6-knowledge-check"
+title = "Knowledge check"
+kind = "assessment"
+objectives = []
+
+[[units]]
+module = "implement-storage-account-security"
+n = 7
+slug = "7-summary"
+title = "Summary"
+kind = "summary"
+objectives = []
+
+[[units]]
+module = "configure-network-security-azure-storage"
+n = 1
+slug = "1-introduction"
+title = "Introduction"
+kind = "intro"
+objectives = []
+
+[[units]]
+module = "configure-network-security-azure-storage"
+n = 2
+slug = "2-describe-storage-network-security"
+title = "Describe Azure Storage network security controls"
+kind = "concept"
+objectives = ["D2.1.2"]
+
+[[units]]
+module = "configure-network-security-azure-storage"
+n = 3
+slug = "3-configure-vnet-ip-rules"
+title = "Configure virtual network and IP rules"
+kind = "concept"
+objectives = ["D2.1.2"]
+
+[[units]]
+module = "configure-network-security-azure-storage"
+n = 4
+slug = "4-configure-resource-instance-rules"
+title = "Configure resource instance rules and trusted services"
+kind = "concept"
+objectives = ["D2.1.2"]
+
+[[units]]
+module = "configure-network-security-azure-storage"
+n = 5
+slug = "5-implement-private-endpoints"
+title = "Implement private endpoints for storage accounts"
+kind = "concept"
+objectives = ["D2.1.2", "D2.3.6"]
+
+[[units]]
+module = "configure-network-security-azure-storage"
+n = 6
+slug = "6-knowledge-check"
+title = "Knowledge check"
+kind = "assessment"
+objectives = []
+
+[[units]]
+module = "configure-network-security-azure-storage"
+n = 7
+slug = "7-summary"
+title = "Summary"
+kind = "summary"
+objectives = []
+
+[[units]]
+module = "implement-defender-storage"
+n = 1
+slug = "1-introduction"
+title = "Introduction"
+kind = "intro"
+objectives = []
+
+[[units]]
+module = "implement-defender-storage"
+n = 2
+slug = "2-explore-defender-storage-capabilities"
+title = "Explore Microsoft Defender for Storage capabilities"
+kind = "concept"
+objectives = ["D2.1.3"]
+
+[[units]]
+module = "implement-defender-storage"
+n = 3
+slug = "3-enable-deploy-defender-storage"
+title = "Enable and deploy Defender for Storage"
+kind = "concept"
+objectives = ["D2.1.3"]
+
+[[units]]
+module = "implement-defender-storage"
+n = 4
+slug = "4-configure-malware-scanning-sensitive-data"
+title = "Configure malware scanning and sensitive data detection"
+kind = "concept"
+objectives = ["D2.1.3"]
+
+[[units]]
+module = "implement-defender-storage"
+n = 5
+slug = "5-configure-alert-routing-validate-coverage"
+title = "Configure alert routing and validate Defender coverage"
+kind = "concept"
+objectives = ["D2.1.3"]
+
+[[units]]
+module = "implement-defender-storage"
+n = 6
+slug = "6-knowledge-check"
+title = "Knowledge check"
+kind = "assessment"
+objectives = []
+
+[[units]]
+module = "implement-defender-storage"
+n = 7
+slug = "7-summary"
+title = "Summary"
+kind = "summary"
+objectives = []
+
+[[units]]
+module = "configure-azure-sql-platform-security"
+n = 1
+slug = "1-introduction"
+title = "Introduction"
+kind = "intro"
+objectives = []
+
+[[units]]
+module = "configure-azure-sql-platform-security"
+n = 2
+slug = "2-configure-authentication-managed-identity"
+title = "Configure authentication and managed identity access"
+kind = "concept"
+objectives = ["D2.2.1"]
+
+[[units]]
+module = "configure-azure-sql-platform-security"
+n = 3
+slug = "3-implement-network-isolation"
+title = "Implement network isolation"
+kind = "concept"
+objectives = ["D2.2.1"]
+
+[[units]]
+module = "configure-azure-sql-platform-security"
+n = 4
+slug = "4-encrypt-protect-data"
+title = "Encrypt and protect data in transit and at rest"
+kind = "concept"
+objectives = ["D2.2.1"]
+
+[[units]]
+module = "configure-azure-sql-platform-security"
+n = 5
+slug = "5-apply-data-masking-row-level-security"
+title = "Apply data masking and row-level security"
+kind = "concept"
+objectives = ["D2.2.1"]
+
+[[units]]
+module = "configure-azure-sql-platform-security"
+n = 6
+slug = "6-knowledge-check"
+title = "Knowledge check"
+kind = "assessment"
+objectives = []
+
+[[units]]
+module = "configure-azure-sql-platform-security"
+n = 7
+slug = "7-summary"
+title = "Summary"
+kind = "summary"
+objectives = []
+
+[[units]]
+module = "configure-azure-sql-auditing"
+n = 1
+slug = "1-introduction"
+title = "Introduction"
+kind = "intro"
+objectives = []
+
+[[units]]
+module = "configure-azure-sql-auditing"
+n = 2
+slug = "2-describe-azure-sql-auditing-capabilities"
+title = "Describe Azure SQL auditing capabilities"
+kind = "concept"
+objectives = ["D2.2.2"]
+
+[[units]]
+module = "configure-azure-sql-auditing"
+n = 3
+slug = "3-configure-audit-destinations"
+title = "Configure audit destinations for Azure SQL Database"
+kind = "concept"
+objectives = ["D2.2.2"]
+
+[[units]]
+module = "configure-azure-sql-auditing"
+n = 4
+slug = "4-configure-auditing-sql-managed-instance"
+title = "Configure auditing for SQL Managed Instance"
+kind = "concept"
+objectives = ["D2.2.2"]
+
+[[units]]
+module = "configure-azure-sql-auditing"
+n = 5
+slug = "5-design-compliant-audit-strategy"
+title = "Design a compliant audit strategy"
+kind = "concept"
+objectives = ["D2.2.2"]
+
+[[units]]
+module = "configure-azure-sql-auditing"
+n = 6
+slug = "6-knowledge-check"
+title = "Knowledge check"
+kind = "assessment"
+objectives = []
+
+[[units]]
+module = "configure-azure-sql-auditing"
+n = 7
+slug = "7-summary"
+title = "Summary"
+kind = "summary"
+objectives = []
+
+[[units]]
+module = "implement-defender-databases"
+n = 1
+slug = "1-introduction"
+title = "Introduction"
+kind = "intro"
+objectives = []
+
+[[units]]
+module = "implement-defender-databases"
+n = 2
+slug = "2-explore-defender-databases-capabilities"
+title = "Explore Microsoft Defender for Databases capabilities"
+kind = "concept"
+objectives = ["D2.2.3"]
+
+[[units]]
+module = "implement-defender-databases"
+n = 3
+slug = "3-enable-defender-azure-sql-databases"
+title = "Enable Defender for Azure SQL Databases at subscription scope"
+kind = "concept"
+objectives = ["D2.2.3"]
+
+[[units]]
+module = "implement-defender-databases"
+n = 4
+slug = "4-enable-defender-open-source-databases"
+title = "Enable Defender for open-source relational databases"
+kind = "concept"
+objectives = ["D2.2.3"]
+
+[[units]]
+module = "implement-defender-databases"
+n = 5
+slug = "5-configure-vulnerability-assessment"
+title = "Configure vulnerability assessment"
+kind = "concept"
+objectives = ["D2.2.3"]
+
+[[units]]
+module = "implement-defender-databases"
+n = 6
+slug = "6-configure-alert-routing-validate-coverage"
+title = "Configure alert routing and validate coverage"
+kind = "concept"
+objectives = ["D2.2.3"]
+
+[[units]]
+module = "implement-defender-databases"
+n = 7
+slug = "7-knowledge-check"
+title = "Knowledge check"
+kind = "assessment"
+objectives = []
+
+[[units]]
+module = "implement-defender-databases"
+n = 8
+slug = "8-summary"
+title = "Summary"
+kind = "summary"
+objectives = []
+
+[[units]]
+module = "segment-isolate-workloads-network-security-controls"
+n = 1
+slug = "1-introduction"
+title = "Introduction"
+kind = "intro"
+objectives = []
+
+[[units]]
+module = "segment-isolate-workloads-network-security-controls"
+n = 2
+slug = "2-assess-network-segmentation-gaps"
+title = "Assess network segmentation gaps"
+kind = "concept"
+objectives = ["D2.3.1"]
+
+[[units]]
+module = "segment-isolate-workloads-network-security-controls"
+n = 3
+slug = "3-control-traffic-network-security-groups"
+title = "Control traffic with network security groups (NSGs)"
+kind = "concept"
+objectives = ["D2.3.1"]
+
+[[units]]
+module = "segment-isolate-workloads-network-security-controls"
+n = 4
+slug = "4-simplify-rule-management-application-security-groups"
+title = "Simplify rule management with application security groups"
+kind = "concept"
+objectives = ["D2.3.1"]
+
+[[units]]
+module = "segment-isolate-workloads-network-security-controls"
+n = 5
+slug = "5-enforce-consistent-policy-azure-virtual-network-manager"
+title = "Enforce consistent policy with Azure Virtual Network Manager"
+kind = "concept"
+objectives = ["D2.3.2"]
+
+[[units]]
+module = "segment-isolate-workloads-network-security-controls"
+n = 6
+slug = "6-verify-effective-network-security-rules-network-watcher"
+title = "Verify effective network security rules with Network Watcher"
+kind = "concept"
+objectives = ["D2.3.9"]
+
+[[units]]
+module = "segment-isolate-workloads-network-security-controls"
+n = 7
+slug = "7-knowledge-check"
+title = "Knowledge check"
+kind = "assessment"
+objectives = []
+
+[[units]]
+module = "segment-isolate-workloads-network-security-controls"
+n = 8
+slug = "8-summary"
+title = "Summary"
+kind = "summary"
+objectives = []
+
+[[units]]
+module = "centralize-traffic-inspection-azure-firewall"
+n = 1
+slug = "1-introduction"
+title = "Introduction"
+kind = "intro"
+objectives = []
+
+[[units]]
+module = "centralize-traffic-inspection-azure-firewall"
+n = 2
+slug = "2-determine-when-centralized-traffic-inspection-required"
+title = "Determine when centralized traffic inspection is required"
+kind = "concept"
+objectives = ["D2.3.8"]
+
+[[units]]
+module = "centralize-traffic-inspection-azure-firewall"
+n = 3
+slug = "3-configure-azure-firewall-rules-policies"
+title = "Configure Azure Firewall rules and policies"
+kind = "concept"
+objectives = ["D2.3.8"]
+
+[[units]]
+module = "centralize-traffic-inspection-azure-firewall"
+n = 4
+slug = "4-secure-virtual-wan-hub-azure-firewall"
+title = "Secure a Virtual WAN hub with Azure Firewall"
+kind = "concept"
+objectives = ["D2.3.3", "D2.3.8"]
+
+[[units]]
+module = "centralize-traffic-inspection-azure-firewall"
+n = 5
+slug = "5-knowledge-check"
+title = "Knowledge check"
+kind = "assessment"
+objectives = []
+
+[[units]]
+module = "centralize-traffic-inspection-azure-firewall"
+n = 6
+slug = "6-summary"
+title = "Summary"
+kind = "summary"
+objectives = []
+
+[[units]]
+module = "secure-hybrid-connectivity-azure"
+n = 1
+slug = "1-introduction"
+title = "Introduction"
+kind = "intro"
+objectives = []
+
+[[units]]
+module = "secure-hybrid-connectivity-azure"
+n = 2
+slug = "2-assess-security-risks-hybrid-connectivity"
+title = "Assess security risks in hybrid connectivity"
+kind = "concept"
+objectives = ["D2.3.4"]
+
+[[units]]
+module = "secure-hybrid-connectivity-azure"
+n = 3
+slug = "3-harden-vpn-gateway-security"
+title = "Harden VPN gateway security"
+kind = "concept"
+objectives = ["D2.3.4"]
+
+[[units]]
+module = "secure-hybrid-connectivity-azure"
+n = 4
+slug = "4-replace-broad-vpn-access-entra-private-access"
+title = "Replace broad VPN access with Microsoft Entra Private Access"
+kind = "concept"
+objectives = ["D2.3.5"]
+license_blocked = true
+
+[[units]]
+module = "secure-hybrid-connectivity-azure"
+n = 5
+slug = "5-knowledge-check"
+title = "Knowledge check"
+kind = "assessment"
+objectives = []
+
+[[units]]
+module = "secure-hybrid-connectivity-azure"
+n = 6
+slug = "6-summary"
+title = "Summary"
+kind = "summary"
+objectives = []
+
+[[units]]
+module = "eliminate-public-exposure-paas-private-link"
+n = 1
+slug = "1-introduction"
+title = "Introduction"
+kind = "intro"
+objectives = []
+
+[[units]]
+module = "eliminate-public-exposure-paas-private-link"
+n = 2
+slug = "2-assess-risk-public-paas-endpoint-exposure"
+title = "Assess the risk of public PaaS endpoint exposure"
+kind = "concept"
+objectives = ["D2.3.6"]
+
+[[units]]
+module = "eliminate-public-exposure-paas-private-link"
+n = 3
+slug = "3-configure-private-endpoints-eliminate-public-paas-exposure"
+title = "Configure private endpoints to eliminate public PaaS exposure"
+kind = "concept"
+objectives = ["D2.3.6"]
+
+[[units]]
+module = "eliminate-public-exposure-paas-private-link"
+n = 4
+slug = "4-expose-internal-services-azure-private-link-service"
+title = "Expose internal services securely using Azure Private Link service"
+kind = "concept"
+objectives = ["D2.3.7"]
+
+[[units]]
+module = "eliminate-public-exposure-paas-private-link"
+n = 5
+slug = "5-enforce-audit-private-endpoint-adoption"
+title = "Enforce and audit private endpoint adoption"
+kind = "concept"
+objectives = ["D2.3.6"]
+
+[[units]]
+module = "eliminate-public-exposure-paas-private-link"
+n = 6
+slug = "6-knowledge-check"
+title = "Knowledge check"
+kind = "assessment"
+objectives = []
+
+[[units]]
+module = "eliminate-public-exposure-paas-private-link"
+n = 7
+slug = "7-summary"
+title = "Summary"
+kind = "summary"
+objectives = []
+
+[[units]]
+module = "secure-access-entra-agent-identity"
+n = 1
+slug = "1-introduction"
+title = "Introduction"
+kind = "intro"
+objectives = []
+
+[[units]]
+module = "secure-access-entra-agent-identity"
+n = 2
+slug = "2-authentication-flow-conditional-access"
+title = "Map authentication flows and Conditional Access scope"
+kind = "concept"
+objectives = ["D3.1.4"]
+license_blocked = true
+
+[[units]]
+module = "secure-access-entra-agent-identity"
+n = 3
+slug = "3-configure-agent-conditional-access-policy"
+title = "Configure Conditional Access policies for agents"
+kind = "concept"
+objectives = ["D3.1.4"]
+license_blocked = true
+
+[[units]]
+module = "secure-access-entra-agent-identity"
+n = 4
+slug = "4-control-agent-access-lifecycle"
+title = "Control agent access and lifecycle"
+kind = "concept"
+objectives = ["D3.1.6"]
+license_blocked = true
+
+[[units]]
+module = "secure-access-entra-agent-identity"
+n = 5
+slug = "5-knowledge-check"
+title = "Knowledge check"
+kind = "assessment"
+objectives = []
+
+[[units]]
+module = "secure-access-entra-agent-identity"
+n = 6
+slug = "6-summary"
+title = "Summary"
+kind = "summary"
+objectives = []
+
+[[units]]
+module = "analyze-ai-identity-risks-defender-xdr"
+n = 1
+slug = "1-introduction"
+title = "Introduction"
+kind = "intro"
+objectives = []
+
+[[units]]
+module = "analyze-ai-identity-risks-defender-xdr"
+n = 2
+slug = "2-discover-ai-agents-defender-portal"
+title = "Discover AI agents in the Microsoft Defender portal"
+kind = "concept"
+objectives = ["D3.1.5"]
+license_blocked = true
+
+[[units]]
+module = "analyze-ai-identity-risks-defender-xdr"
+n = 3
+slug = "3-assess-blast-radius-attack-paths"
+title = "Assess blast radius and attack paths"
+kind = "concept"
+objectives = ["D3.1.5"]
+license_blocked = true
+
+[[units]]
+module = "analyze-ai-identity-risks-defender-xdr"
+n = 4
+slug = "4-knowledge-check"
+title = "Knowledge check"
+kind = "assessment"
+objectives = []
+
+[[units]]
+module = "analyze-ai-identity-risks-defender-xdr"
+n = 5
+slug = "5-summary"
+title = "Summary"
+kind = "summary"
+objectives = []
+
+[[units]]
+module = "enable-protection-copilot-studio-agents"
+n = 1
+slug = "1-introduction"
+title = "Introduction"
+kind = "intro"
+objectives = []
+
+[[units]]
+module = "enable-protection-copilot-studio-agents"
+n = 2
+slug = "2-explore-copilot-studio-ai-agent-protection"
+title = "Explore Copilot Studio AI agent protection"
+kind = "concept"
+objectives = ["D3.1.3"]
+license_blocked = true
+
+[[units]]
+module = "enable-protection-copilot-studio-agents"
+n = 3
+slug = "3-enable-protection-microsoft-defender"
+title = "Enable protection in Microsoft Defender"
+kind = "concept"
+objectives = ["D3.1.3"]
+license_blocked = true
+
+[[units]]
+module = "enable-protection-copilot-studio-agents"
+n = 4
+slug = "4-review-ai-agent-protection-outputs"
+title = "Review AI agent protection outputs"
+kind = "concept"
+objectives = ["D3.1.3"]
+license_blocked = true
+
+[[units]]
+module = "enable-protection-copilot-studio-agents"
+n = 5
+slug = "5-knowledge-check"
+title = "Knowledge check"
+kind = "assessment"
+objectives = []
+
+[[units]]
+module = "enable-protection-copilot-studio-agents"
+n = 6
+slug = "6-summary"
+title = "Summary"
+kind = "summary"
+objectives = []
+
+[[units]]
+module = "configure-ai-gateway-security-foundry"
+n = 1
+slug = "1-introduction"
+title = "Introduction"
+kind = "intro"
+objectives = []
+
+[[units]]
+module = "configure-ai-gateway-security-foundry"
+n = 2
+slug = "2-examine-ai-gateway-architecture"
+title = "Examine AI Gateway architecture"
+kind = "concept"
+objectives = ["D3.1.7"]
+
+[[units]]
+module = "configure-ai-gateway-security-foundry"
+n = 3
+slug = "3-create-configure-ai-gateway"
+title = "Create and configure AI Gateway"
+kind = "concept"
+objectives = ["D3.1.7"]
+
+[[units]]
+module = "configure-ai-gateway-security-foundry"
+n = 4
+slug = "4-secure-monitor-ai-gateway-access"
+title = "Secure and monitor AI Gateway access"
+kind = "concept"
+objectives = ["D3.1.7"]
+
+[[units]]
+module = "configure-ai-gateway-security-foundry"
+n = 5
+slug = "5-knowledge-check"
+title = "Knowledge check"
+kind = "assessment"
+objectives = []
+
+[[units]]
+module = "configure-ai-gateway-security-foundry"
+n = 6
+slug = "6-summary"
+title = "Summary"
+kind = "summary"
+objectives = []
+
+[[units]]
+module = "azure-ai-foundry-configure-manage-guardrails"
+n = 1
+slug = "introduction"
+title = "Introduction"
+kind = "intro"
+objectives = []
+
+[[units]]
+module = "azure-ai-foundry-configure-manage-guardrails"
+n = 2
+slug = "understand-guardrails"
+title = "Understand guardrails and Microsoft Content Safety"
+kind = "concept"
+objectives = ["D3.1.9"]
+
+[[units]]
+module = "azure-ai-foundry-configure-manage-guardrails"
+n = 3
+slug = "understand-safety-controls"
+title = "Understand safety controls in Microsoft Foundry"
+kind = "concept"
+objectives = ["D3.1.9"]
+
+[[units]]
+module = "azure-ai-foundry-configure-manage-guardrails"
+n = 4
+slug = "try-guardrails"
+title = "Try out built-in guardrails"
+kind = "concept"
+objectives = ["D3.1.9"]
+
+[[units]]
+module = "azure-ai-foundry-configure-manage-guardrails"
+n = 5
+slug = "create-manage-blocklist"
+title = "Create and manage blocklists in Microsoft Foundry"
+kind = "concept"
+objectives = ["D3.1.9"]
+
+[[units]]
+module = "azure-ai-foundry-configure-manage-guardrails"
+n = 6
+slug = "configure-content-filter"
+title = "Configure and apply guardrails in Microsoft Foundry"
+kind = "concept"
+objectives = ["D3.1.9"]
+
+[[units]]
+module = "azure-ai-foundry-configure-manage-guardrails"
+n = 7
+slug = "choose-refine-guardrails"
+title = "Choose and refine the right guardrails for your AI workloads"
+kind = "concept"
+objectives = ["D3.1.9"]
+
+[[units]]
+module = "azure-ai-foundry-configure-manage-guardrails"
+n = 8
+slug = "knowledge-check"
+title = "Module assessment"
+kind = "assessment"
+objectives = []
+
+[[units]]
+module = "azure-ai-foundry-configure-manage-guardrails"
+n = 9
+slug = "summary"
+title = "Summary"
+kind = "summary"
+objectives = []
+
+[[units]]
+module = "defender-for-cloud-ai-protect-workloads"
+n = 1
+slug = "introduction"
+title = "Introduction"
+kind = "intro"
+objectives = []
+
+[[units]]
+module = "defender-for-cloud-ai-protect-workloads"
+n = 2
+slug = "enable-ai-workload-plan"
+title = "Enable the AI workloads plan"
+kind = "concept"
+objectives = ["D3.1.8"]
+
+[[units]]
+module = "defender-for-cloud-ai-protect-workloads"
+n = 3
+slug = "data-ai-security-dashboard"
+title = "Review insights in the Data & AI security dashboard"
+kind = "concept"
+objectives = ["D3.1.10"]
+
+[[units]]
+module = "defender-for-cloud-ai-protect-workloads"
+n = 4
+slug = "assess-improve-ai-posture"
+title = "Assess and improve AI security posture with Cloud Security Posture Management (CSPM)"
+kind = "concept"
+objectives = ["D3.1.10", "D4.1.1"]
+
+[[units]]
+module = "defender-for-cloud-ai-protect-workloads"
+n = 5
+slug = "detect-ai-threats"
+title = "Detect AI threats at runtime with Cloud Workload Protection (CWP)"
+kind = "concept"
+objectives = ["D3.1.8"]
+
+[[units]]
+module = "defender-for-cloud-ai-protect-workloads"
+n = 6
+slug = "investigate-ai-alerts-xdr"
+title = "Investigate AI security alerts with prompt evidence in Microsoft Defender XDR"
+kind = "concept"
+objectives = ["D3.1.8"]
+
+[[units]]
+module = "defender-for-cloud-ai-protect-workloads"
+n = 7
+slug = "knowledge-check"
+title = "Module assessment"
+kind = "assessment"
+objectives = []
+
+[[units]]
+module = "defender-for-cloud-ai-protect-workloads"
+n = 8
+slug = "summary"
+title = "Summary"
+kind = "summary"
+objectives = []
+
+[[units]]
+module = "implement-defender-cloud-ai-services"
+n = 1
+slug = "1-introduction"
+title = "Introduction"
+kind = "intro"
+objectives = []
+
+[[units]]
+module = "implement-defender-cloud-ai-services"
+n = 2
+slug = "2-enable-configure-ai-services-plan"
+title = "Enable and configure the Defender for AI Services plan"
+kind = "concept"
+objectives = ["D3.1.8"]
+
+[[units]]
+module = "implement-defender-cloud-ai-services"
+n = 3
+slug = "3-monitor-ai-security-dashboard"
+title = "Monitor AI security with the Data and AI dashboard"
+kind = "concept"
+objectives = ["D3.1.10"]
+
+[[units]]
+module = "implement-defender-cloud-ai-services"
+n = 4
+slug = "4-knowledge-check"
+title = "Knowledge check"
+kind = "assessment"
+objectives = []
+
+[[units]]
+module = "implement-defender-cloud-ai-services"
+n = 5
+slug = "5-summary"
+title = "Summary"
+kind = "summary"
+objectives = []
+
+[[units]]
+module = "manage-agents-microsoft-agent-365"
+n = 1
+slug = "1-introduction"
+title = "Introduction"
+kind = "intro"
+objectives = []
+
+[[units]]
+module = "manage-agents-microsoft-agent-365"
+n = 2
+slug = "2-enable-navigate-microsoft-agent-365"
+title = "Enable and navigate Microsoft Agent 365"
+kind = "concept"
+objectives = ["D3.1.11"]
+license_blocked = true
+
+[[units]]
+module = "manage-agents-microsoft-agent-365"
+n = 3
+slug = "3-register-agents-apply-access-controls"
+title = "Register agents and apply access controls"
+kind = "concept"
+objectives = ["D3.1.11", "D3.1.6"]
+license_blocked = true
+
+[[units]]
+module = "manage-agents-microsoft-agent-365"
+n = 4
+slug = "4-monitor-agent-activity-enforce-governance"
+title = "Monitor agent activity and enforce governance"
+kind = "concept"
+objectives = ["D3.1.11"]
+license_blocked = true
+
+[[units]]
+module = "manage-agents-microsoft-agent-365"
+n = 5
+slug = "5-knowledge-check"
+title = "Knowledge check"
+kind = "assessment"
+objectives = []
+
+[[units]]
+module = "manage-agents-microsoft-agent-365"
+n = 6
+slug = "6-summary"
+title = "Summary"
+kind = "summary"
+objectives = []
+
+[[units]]
+module = "identify-ai-data-risks-purview"
+n = 1
+slug = "1-introduction"
+title = "Introduction"
+kind = "intro"
+objectives = []
+
+[[units]]
+module = "identify-ai-data-risks-purview"
+n = 2
+slug = "2-configure-purview-ai"
+title = "Configure Data Security Posture Management (DSPM) for AI"
+kind = "concept"
+objectives = ["D3.1.2"]
+license_blocked = true
+
+[[units]]
+module = "identify-ai-data-risks-purview"
+n = 3
+slug = "3-assess-sharepoint-overexposure"
+title = "Assess SharePoint overexposure"
+kind = "concept"
+objectives = ["D3.1.1"]
+license_blocked = true
+
+[[units]]
+module = "identify-ai-data-risks-purview"
+n = 4
+slug = "4-identify-risks-copilot-ai-interactions"
+title = "Identify risks in Copilot and AI app interactions"
+kind = "concept"
+objectives = ["D3.1.2"]
+license_blocked = true
+
+[[units]]
+module = "identify-ai-data-risks-purview"
+n = 5
+slug = "5-knowledge-check"
+title = "Knowledge check"
+kind = "assessment"
+objectives = []
+
+[[units]]
+module = "identify-ai-data-risks-purview"
+n = 6
+slug = "6-summary"
+title = "Summary"
+kind = "summary"
+objectives = []
+
+[[units]]
+module = "implement-disk-encryption-azure-virtual-machines"
+n = 1
+slug = "1-introduction"
+title = "Introduction"
+kind = "intro"
+objectives = []
+
+[[units]]
+module = "implement-disk-encryption-azure-virtual-machines"
+n = 2
+slug = "2-choose-disk-encryption-option"
+title = "Choose the right disk encryption option for Azure VMs"
+kind = "concept"
+objectives = ["D3.2.1"]
+
+[[units]]
+module = "implement-disk-encryption-azure-virtual-machines"
+n = 3
+slug = "3-configure-encryption-at-host"
+title = "Configure encryption at host with customer-managed keys"
+kind = "concept"
+objectives = ["D3.2.1"]
+
+[[units]]
+module = "implement-disk-encryption-azure-virtual-machines"
+n = 4
+slug = "4-apply-confidential-disk-encryption"
+title = "Apply confidential disk encryption to confidential virtual machines"
+kind = "concept"
+objectives = ["D3.2.1"]
+
+[[units]]
+module = "implement-disk-encryption-azure-virtual-machines"
+n = 5
+slug = "5-knowledge-check"
+title = "Knowledge check"
+kind = "assessment"
+objectives = []
+
+[[units]]
+module = "implement-disk-encryption-azure-virtual-machines"
+n = 6
+slug = "6-summary"
+title = "Summary"
+kind = "summary"
+objectives = []
+
+[[units]]
+module = "configure-trusted-launch-azure-virtual-machines"
+n = 1
+slug = "1-introduction"
+title = "Introduction"
+kind = "intro"
+objectives = []
+
+[[units]]
+module = "configure-trusted-launch-azure-virtual-machines"
+n = 2
+slug = "2-identify-trusted-launch-components"
+title = "Identify Trusted Launch components and VM security types"
+kind = "concept"
+objectives = ["D3.2.8"]
+
+[[units]]
+module = "configure-trusted-launch-azure-virtual-machines"
+n = 3
+slug = "3-enable-trusted-launch"
+title = "Enable Trusted Launch on new and existing Gen2 VMs"
+kind = "concept"
+objectives = ["D3.2.8"]
+
+[[units]]
+module = "configure-trusted-launch-azure-virtual-machines"
+n = 4
+slug = "4-migrate-gen-1-configure-components"
+title = "Migrate Gen1 VMs and configure Trusted Launch components"
+kind = "concept"
+objectives = ["D3.2.8"]
+
+[[units]]
+module = "configure-trusted-launch-azure-virtual-machines"
+n = 5
+slug = "5-enforce-trusted-launch-azure-policy"
+title = "Enforce Trusted Launch adoption with Azure Policy"
+kind = "concept"
+objectives = ["D3.2.8"]
+
+[[units]]
+module = "configure-trusted-launch-azure-virtual-machines"
+n = 6
+slug = "6-knowledge-check"
+title = "Knowledge check"
+kind = "assessment"
+objectives = []
+
+[[units]]
+module = "configure-trusted-launch-azure-virtual-machines"
+n = 7
+slug = "7-summary"
+title = "Summary"
+kind = "summary"
+objectives = []
+
+[[units]]
+module = "plan-implement-azure-bastion"
+n = 1
+slug = "1-introduction"
+title = "Introduction"
+kind = "intro"
+objectives = []
+
+[[units]]
+module = "plan-implement-azure-bastion"
+n = 2
+slug = "2-plan-azure-bastion-deployment"
+title = "Plan Azure Bastion deployment"
+kind = "concept"
+objectives = ["D3.2.2"]
+
+[[units]]
+module = "plan-implement-azure-bastion"
+n = 3
+slug = "3-deploy-configure-azure-bastion"
+title = "Deploy and configure Azure Bastion"
+kind = "concept"
+objectives = ["D3.2.2"]
+
+[[units]]
+module = "plan-implement-azure-bastion"
+n = 4
+slug = "4-connect-virtual-machines-azure-bastion"
+title = "Connect to VMs through Azure Bastion"
+kind = "concept"
+objectives = ["D3.2.2"]
+
+[[units]]
+module = "plan-implement-azure-bastion"
+n = 5
+slug = "5-knowledge-check"
+title = "Knowledge check"
+kind = "assessment"
+objectives = []
+
+[[units]]
+module = "plan-implement-azure-bastion"
+n = 6
+slug = "6-summary"
+title = "Summary"
+kind = "summary"
+objectives = []
+
+[[units]]
+module = "manage-security-azure-arc-servers"
+n = 1
+slug = "1-introduction"
+title = "Introduction"
+kind = "intro"
+objectives = []
+
+[[units]]
+module = "manage-security-azure-arc-servers"
+n = 2
+slug = "2-control-access-extension-security"
+title = "Control access and extension security for Arc-enabled servers"
+kind = "concept"
+objectives = ["D3.2.4"]
+
+[[units]]
+module = "manage-security-azure-arc-servers"
+n = 3
+slug = "3-apply-azure-policy-arc-servers"
+title = "Apply Azure Policy to Arc-enabled servers"
+kind = "concept"
+objectives = ["D3.2.4"]
+
+[[units]]
+module = "manage-security-azure-arc-servers"
+n = 4
+slug = "4-monitor-arc-server-security-posture"
+title = "Monitor Arc server security posture in Defender for Cloud"
+kind = "concept"
+objectives = ["D3.2.4"]
+
+[[units]]
+module = "manage-security-azure-arc-servers"
+n = 5
+slug = "5-knowledge-check"
+title = "Knowledge check"
+kind = "assessment"
+objectives = []
+
+[[units]]
+module = "manage-security-azure-arc-servers"
+n = 6
+slug = "6-summary"
+title = "Summary"
+kind = "summary"
+objectives = []
+
+[[units]]
+module = "implement-microsoft-defender-servers"
+n = 1
+slug = "1-introduction"
+title = "Introduction"
+kind = "intro"
+objectives = []
+
+[[units]]
+module = "implement-microsoft-defender-servers"
+n = 2
+slug = "2-onboard-servers-defender-servers"
+title = "Onboard servers to Defender for Servers"
+kind = "concept"
+objectives = ["D3.2.5"]
+
+[[units]]
+module = "implement-microsoft-defender-servers"
+n = 3
+slug = "3-configure-vulnerability-scanning"
+title = "Configure vulnerability scanning with Defender Vulnerability Management"
+kind = "concept"
+objectives = ["D3.2.6", "D3.2.7"]
+
+[[units]]
+module = "implement-microsoft-defender-servers"
+n = 4
+slug = "4-configure-endpoint-agentless-scan-file-integrity-monitoring"
+title = "Configure Defender for Endpoint integration, agentless scanning, and File Integrity Monitoring"
+kind = "concept"
+objectives = ["D3.2.6", "D3.2.7"]
+
+[[units]]
+module = "implement-microsoft-defender-servers"
+n = 5
+slug = "5-knowledge-check"
+title = "Knowledge check"
+kind = "assessment"
+objectives = []
+
+[[units]]
+module = "implement-microsoft-defender-servers"
+n = 6
+slug = "6-summary"
+title = "Summary"
+kind = "summary"
+objectives = []
+
+[[units]]
+module = "enable-enforce-just-in-time-vm-access"
+n = 1
+slug = "1-introduction"
+title = "Introduction"
+kind = "intro"
+objectives = []
+
+[[units]]
+module = "enable-enforce-just-in-time-vm-access"
+n = 2
+slug = "2-examine-access-requirements"
+title = "Examine just-in-time VM access requirements and VM eligibility"
+kind = "concept"
+objectives = ["D3.2.3"]
+
+[[units]]
+module = "enable-enforce-just-in-time-vm-access"
+n = 3
+slug = "3-enable-configure-policies"
+title = "Enable and configure JIT access policies"
+kind = "concept"
+objectives = ["D3.2.3"]
+
+[[units]]
+module = "enable-enforce-just-in-time-vm-access"
+n = 4
+slug = "4-request-access-audit-activity"
+title = "Request just-in-time (JIT) access and audit access activity"
+kind = "concept"
+objectives = ["D3.2.3"]
+
+[[units]]
+module = "enable-enforce-just-in-time-vm-access"
+n = 5
+slug = "5-knowledge-check"
+title = "Module assessment"
+kind = "assessment"
+objectives = []
+
+[[units]]
+module = "enable-enforce-just-in-time-vm-access"
+n = 6
+slug = "6-summary"
+title = "Summary"
+kind = "summary"
+objectives = []
+
+[[units]]
+module = "enforce-vm-security-machine-configuration"
+n = 1
+slug = "1-introduction"
+title = "Introduction"
+kind = "intro"
+objectives = []
+
+[[units]]
+module = "enforce-vm-security-machine-configuration"
+n = 2
+slug = "2-explore-machine-configuration-capabilities"
+title = "Explore Azure Machine Configuration extension capabilities and modes"
+kind = "concept"
+objectives = ["D3.2.9"]
+
+[[units]]
+module = "enforce-vm-security-machine-configuration"
+n = 3
+slug = "3-apply-built-in-security-baseline-policies"
+title = "Apply built-in security baseline policies"
+kind = "concept"
+objectives = ["D3.2.9"]
+
+[[units]]
+module = "enforce-vm-security-machine-configuration"
+n = 4
+slug = "4-author-assign-custom-machine-configurations"
+title = "Author and assign custom machine configurations"
+kind = "concept"
+objectives = ["D3.2.9"]
+
+[[units]]
+module = "enforce-vm-security-machine-configuration"
+n = 5
+slug = "5-knowledge-check"
+title = "Module assessment"
+kind = "assessment"
+objectives = []
+
+[[units]]
+module = "enforce-vm-security-machine-configuration"
+n = 6
+slug = "6-summary"
+title = "Summary"
+kind = "summary"
+objectives = []
+
+[[units]]
+module = "detect-container-risks-defender-containers"
+n = 1
+slug = "1-introduction"
+title = "Introduction"
+kind = "intro"
+objectives = []
+
+[[units]]
+module = "detect-container-risks-defender-containers"
+n = 2
+slug = "2-explore-defender-for-containers"
+title = "Explore Microsoft Defender for Containers"
+kind = "concept"
+objectives = ["D3.3.1"]
+
+[[units]]
+module = "detect-container-risks-defender-containers"
+n = 3
+slug = "3-enable-configure-defender-containers"
+title = "Enable and configure Defender for Containers"
+kind = "concept"
+objectives = ["D3.3.1"]
+
+[[units]]
+module = "detect-container-risks-defender-containers"
+n = 4
+slug = "4-assess-container-image-vulnerabilities"
+title = "Assess container image vulnerabilities"
+kind = "concept"
+objectives = ["D3.3.1"]
+
+[[units]]
+module = "detect-container-risks-defender-containers"
+n = 5
+slug = "5-detect-run-time-threats"
+title = "Detect container runtime threats and misconfigurations"
+kind = "concept"
+objectives = ["D3.3.1"]
+
+[[units]]
+module = "detect-container-risks-defender-containers"
+n = 6
+slug = "6-knowledge-check"
+title = "Knowledge check"
+kind = "assessment"
+objectives = []
+
+[[units]]
+module = "detect-container-risks-defender-containers"
+n = 7
+slug = "7-summary"
+title = "Summary"
+kind = "summary"
+objectives = []
+
+[[units]]
+module = "implement-security-controls-kubernetes"
+n = 1
+slug = "1-introduction"
+title = "Introduction"
+kind = "intro"
+objectives = []
+
+[[units]]
+module = "implement-security-controls-kubernetes"
+n = 2
+slug = "2-control-kubernetes-cluster-access-entra"
+title = "Control AKS cluster access with Microsoft Entra ID and RBAC"
+kind = "concept"
+objectives = ["D3.3.2"]
+
+[[units]]
+module = "implement-security-controls-kubernetes"
+n = 3
+slug = "3-secure-kubernetes-network-access"
+title = "Secure AKS network access"
+kind = "concept"
+objectives = ["D3.3.2"]
+
+[[units]]
+module = "implement-security-controls-kubernetes"
+n = 4
+slug = "4-implement-workload-identity-secrets-management"
+title = "Implement workload identity and secrets management for AKS"
+kind = "concept"
+objectives = ["D3.3.2"]
+
+[[units]]
+module = "implement-security-controls-kubernetes"
+n = 5
+slug = "5-enforce-pod-container-security"
+title = "Enforce pod and container security"
+kind = "concept"
+objectives = ["D3.3.2"]
+
+[[units]]
+module = "implement-security-controls-kubernetes"
+n = 6
+slug = "6-knowledge-check"
+title = "Knowledge check"
+kind = "assessment"
+objectives = []
+
+[[units]]
+module = "implement-security-controls-kubernetes"
+n = 7
+slug = "7-summary"
+title = "Summary"
+kind = "summary"
+objectives = []
+
+[[units]]
+module = "implement-security-controls-containers"
+n = 1
+slug = "1-introduction"
+title = "Introduction"
+kind = "intro"
+objectives = []
+
+[[units]]
+module = "implement-security-controls-containers"
+n = 2
+slug = "2-secure-azure-container-registry"
+title = "Secure Azure Container Registry"
+kind = "concept"
+objectives = ["D3.3.3"]
+
+[[units]]
+module = "implement-security-controls-containers"
+n = 3
+slug = "3-implement-security-controls-azure-container-instances"
+title = "Implement security controls for Azure Container Instances"
+kind = "concept"
+objectives = ["D3.3.4"]
+
+[[units]]
+module = "implement-security-controls-containers"
+n = 4
+slug = "4-implement-security-controls-azure-container-apps"
+title = "Implement security controls for Azure Container Apps"
+kind = "concept"
+objectives = ["D3.3.4"]
+
+[[units]]
+module = "implement-security-controls-containers"
+n = 5
+slug = "5-knowledge-check"
+title = "Knowledge check"
+kind = "assessment"
+objectives = []
+
+[[units]]
+module = "implement-security-controls-containers"
+n = 6
+slug = "6-summary"
+title = "Summary"
+kind = "summary"
+objectives = []
+
+[[units]]
+module = "implement-security-controls-function-logic-apps"
+n = 1
+slug = "1-introduction"
+title = "Introduction"
+kind = "intro"
+objectives = []
+
+[[units]]
+module = "implement-security-controls-function-logic-apps"
+n = 2
+slug = "2-configure-authentication-authorization-function-apps"
+title = "Configure authentication and authorization for Function apps"
+kind = "concept"
+objectives = ["D3.3.5"]
+
+[[units]]
+module = "implement-security-controls-function-logic-apps"
+n = 3
+slug = "3-secure-network-access-function-apps"
+title = "Secure network access for Function apps"
+kind = "concept"
+objectives = ["D3.3.5"]
+
+[[units]]
+module = "implement-security-controls-function-logic-apps"
+n = 4
+slug = "4-implement-security-controls-logic-apps"
+title = "Implement security controls for Logic apps"
+kind = "concept"
+objectives = ["D3.3.6"]
+
+[[units]]
+module = "implement-security-controls-function-logic-apps"
+n = 5
+slug = "5-knowledge-check"
+title = "Knowledge check"
+kind = "assessment"
+objectives = []
+
+[[units]]
+module = "implement-security-controls-function-logic-apps"
+n = 6
+slug = "6-summary"
+title = "Summary"
+kind = "summary"
+objectives = []
+
+[[units]]
+module = "implement-security-web-application-firewall"
+n = 1
+slug = "1-introduction"
+title = "Introduction"
+kind = "intro"
+objectives = []
+
+[[units]]
+module = "implement-security-web-application-firewall"
+n = 2
+slug = "2-implement-security-controls-azure-app-service"
+title = "Implement security controls for Azure App Service"
+kind = "concept"
+objectives = ["D3.3.7"]
+
+[[units]]
+module = "implement-security-web-application-firewall"
+n = 3
+slug = "3-configure-web-application-firewall-policies"
+title = "Configure Web Application Firewall policies"
+kind = "concept"
+objectives = ["D3.3.8"]
+
+[[units]]
+module = "implement-security-web-application-firewall"
+n = 4
+slug = "4-protect-app-service-web-application-firewall"
+title = "Protect App Service with Web Application Firewall"
+kind = "concept"
+objectives = ["D3.3.7", "D3.3.8"]
+
+[[units]]
+module = "implement-security-web-application-firewall"
+n = 5
+slug = "5-knowledge-check"
+title = "Knowledge check"
+kind = "assessment"
+objectives = []
+
+[[units]]
+module = "implement-security-web-application-firewall"
+n = 6
+slug = "6-summary"
+title = "Summary"
+kind = "summary"
+objectives = []
+
+[[units]]
+module = "implement-application-interface-security-management"
+n = 1
+slug = "1-introduction"
+title = "Introduction"
+kind = "intro"
+objectives = []
+
+[[units]]
+module = "implement-application-interface-security-management"
+n = 2
+slug = "2-configure-authentication-authorization-policies"
+title = "Configure API authentication and authorization policies"
+kind = "concept"
+objectives = ["D3.3.9"]
+
+[[units]]
+module = "implement-application-interface-security-management"
+n = 3
+slug = "3-implement-network-security-threat-protection"
+title = "Implement API network security and threat protection"
+kind = "concept"
+objectives = ["D3.3.9"]
+
+[[units]]
+module = "implement-application-interface-security-management"
+n = 4
+slug = "4-secure-management-back-end-connections"
+title = "Secure API Management backend connections"
+kind = "concept"
+objectives = ["D3.3.9"]
+
+[[units]]
+module = "implement-application-interface-security-management"
+n = 5
+slug = "5-configure-application-gateway-management"
+title = "Configure AI Gateway in API Management for Azure AI Foundry"
+kind = "concept"
+objectives = ["D3.1.7"]
+
+[[units]]
+module = "implement-application-interface-security-management"
+n = 6
+slug = "6-knowledge-check"
+title = "Knowledge check"
+kind = "assessment"
+objectives = []
+
+[[units]]
+module = "implement-application-interface-security-management"
+n = 7
+slug = "7-summary"
+title = "Summary"
+kind = "summary"
+objectives = []
+
+[[units]]
+module = "connect-hybrid-multicloud-environments-defender"
+n = 1
+slug = "1-introduction"
+title = "Introduction"
+kind = "intro"
+objectives = []
+
+[[units]]
+module = "connect-hybrid-multicloud-environments-defender"
+n = 2
+slug = "2-explore-multicloud-connectivity-model"
+title = "Explore the Defender for Cloud multicloud connectivity model"
+kind = "concept"
+objectives = ["D4.1.4"]
+
+[[units]]
+module = "connect-hybrid-multicloud-environments-defender"
+n = 3
+slug = "3-plan-connector-strategy"
+title = "Plan a connector strategy for hybrid and multicloud environments"
+kind = "concept"
+objectives = ["D4.1.4"]
+
+[[units]]
+module = "connect-hybrid-multicloud-environments-defender"
+n = 4
+slug = "4-connect-on-premises-azure-arc"
+title = "Connect on-premises machines using Azure Arc"
+kind = "concept"
+objectives = ["D4.1.4", "D3.2.4"]
+
+[[units]]
+module = "connect-hybrid-multicloud-environments-defender"
+n = 5
+slug = "5-connect-amazon-accounts"
+title = "Connect AWS accounts to Defender for Cloud"
+kind = "concept"
+objectives = ["D4.1.4"]
+
+[[units]]
+module = "connect-hybrid-multicloud-environments-defender"
+n = 6
+slug = "6-connect-google-projects"
+title = "Connect GCP projects to Defender for Cloud"
+kind = "concept"
+objectives = ["D4.1.4"]
+
+[[units]]
+module = "connect-hybrid-multicloud-environments-defender"
+n = 7
+slug = "7-verify-multicloud-coverage"
+title = "Verify multicloud coverage and validate protection"
+kind = "concept"
+objectives = ["D4.1.4"]
+
+[[units]]
+module = "connect-hybrid-multicloud-environments-defender"
+n = 8
+slug = "8-knowledge-check"
+title = "Knowledge check"
+kind = "assessment"
+objectives = []
+
+[[units]]
+module = "connect-hybrid-multicloud-environments-defender"
+n = 9
+slug = "9-summary"
+title = "Summary"
+kind = "summary"
+objectives = []
+
+[[units]]
+module = "identify-security-risks-posture-management"
+n = 1
+slug = "1-introduction"
+title = "Introduction"
+kind = "intro"
+objectives = []
+
+[[units]]
+module = "identify-security-risks-posture-management"
+n = 2
+slug = "2-explore-plans-posture-visibility"
+title = "Explore CSPM plans and posture visibility"
+kind = "concept"
+objectives = ["D4.1.1"]
+
+[[units]]
+module = "identify-security-risks-posture-management"
+n = 3
+slug = "3-analyze-security-recommendations-risk-prioritization"
+title = "Analyze security recommendations with risk prioritization"
+kind = "concept"
+objectives = ["D4.1.1"]
+
+[[units]]
+module = "identify-security-risks-posture-management"
+n = 4
+slug = "4-identify-attack-paths-choke-points"
+title = "Identify attack paths and choke points"
+kind = "concept"
+objectives = ["D4.1.1"]
+
+[[units]]
+module = "identify-security-risks-posture-management"
+n = 5
+slug = "5-hunt-risks-cloud-security-explorer"
+title = "Hunt for risks with cloud security explorer"
+kind = "concept"
+objectives = ["D4.1.1"]
+
+[[units]]
+module = "identify-security-risks-posture-management"
+n = 6
+slug = "6-knowledge-check"
+title = "Knowledge check"
+kind = "assessment"
+objectives = []
+
+[[units]]
+module = "identify-security-risks-posture-management"
+n = 7
+slug = "7-summary"
+title = "Summary"
+kind = "summary"
+objectives = []
+
+[[units]]
+module = "discover-external-assets-vulnerabilities"
+n = 1
+slug = "1-introduction"
+title = "Introduction"
+kind = "intro"
+objectives = []
+
+[[units]]
+module = "discover-external-assets-vulnerabilities"
+n = 2
+slug = "2-explore-external-attack-surface-capabilities"
+title = "Explore EASM features and capabilities"
+kind = "concept"
+objectives = ["D4.1.6"]
+
+[[units]]
+module = "discover-external-assets-vulnerabilities"
+n = 3
+slug = "3-discover-assets-recursive-discovery"
+title = "Discover assets using recursive discovery"
+kind = "concept"
+objectives = ["D4.1.6"]
+
+[[units]]
+module = "discover-external-assets-vulnerabilities"
+n = 4
+slug = "4-analyze-attack-surface-dashboards"
+title = "Analyze your attack surface with dashboards"
+kind = "concept"
+objectives = ["D4.1.6"]
+
+[[units]]
+module = "discover-external-assets-vulnerabilities"
+n = 5
+slug = "5-integrate-external-attack-surface-defender-cloud"
+title = "Integrate EASM insights with Defender for Cloud"
+kind = "concept"
+objectives = ["D4.1.6"]
+
+[[units]]
+module = "discover-external-assets-vulnerabilities"
+n = 6
+slug = "6-knowledge-check"
+title = "Knowledge check"
+kind = "assessment"
+objectives = []
+
+[[units]]
+module = "discover-external-assets-vulnerabilities"
+n = 7
+slug = "7-summary"
+title = "Summary"
+kind = "summary"
+objectives = []
+
+[[units]]
+module = "enable-configure-workload-protection-plans"
+n = 1
+slug = "1-introduction"
+title = "Introduction"
+kind = "intro"
+objectives = []
+
+[[units]]
+module = "enable-configure-workload-protection-plans"
+n = 2
+slug = "2-explore-workload-protection-plan-catalog"
+title = "Understand the Defender for Cloud CWPP plan catalog"
+kind = "concept"
+objectives = ["D4.1.3"]
+
+[[units]]
+module = "enable-configure-workload-protection-plans"
+n = 3
+slug = "3-enable-plans-environment-settings"
+title = "Enable workload protection plans in Environment Settings"
+kind = "concept"
+objectives = ["D4.1.3"]
+
+[[units]]
+module = "enable-configure-workload-protection-plans"
+n = 4
+slug = "4-configure-storage-database-plans"
+title = "Configure Defender for Storage and Defender for Databases"
+kind = "concept"
+objectives = ["D4.1.3", "D2.1.3", "D2.2.3"]
+
+[[units]]
+module = "enable-configure-workload-protection-plans"
+n = 5
+slug = "5-deploy-plans-scale-verify-coverage"
+title = "Deploy plans at scale and verify coverage"
+kind = "concept"
+objectives = ["D4.1.3"]
+
+[[units]]
+module = "enable-configure-workload-protection-plans"
+n = 6
+slug = "6-knowledge-check"
+title = "Knowledge check"
+kind = "assessment"
+objectives = []
+
+[[units]]
+module = "enable-configure-workload-protection-plans"
+n = 7
+slug = "7-summary"
+title = "Summary"
+kind = "summary"
+objectives = []
+
+[[units]]
+module = "configure-defender-vulnerability-management"
+n = 1
+slug = "1-introduction"
+title = "Introduction"
+kind = "intro"
+objectives = []
+
+[[units]]
+module = "configure-defender-vulnerability-management"
+n = 2
+slug = "2-explore-vulnerability-management-integration-defender-servers"
+title = "Explore Microsoft Defender Vulnerability Management (MDVM) integration with Defender for Servers"
+kind = "concept"
+objectives = ["D4.1.5"]
+
+[[units]]
+module = "configure-defender-vulnerability-management"
+n = 3
+slug = "3-configure-vulnerability-scanning-azure-vms"
+title = "Configure vulnerability scanning for Azure VMs"
+kind = "concept"
+objectives = ["D4.1.5"]
+
+[[units]]
+module = "configure-defender-vulnerability-management"
+n = 4
+slug = "4-review-manage-vulnerability-findings"
+title = "Review and manage vulnerability findings"
+kind = "concept"
+objectives = ["D4.1.5"]
+
+[[units]]
+module = "configure-defender-vulnerability-management"
+n = 5
+slug = "5-apply-premium-vulnerability-management-capabilities"
+title = "Apply Plan 2 premium MDVM capabilities"
+kind = "concept"
+objectives = ["D4.1.5"]
+
+[[units]]
+module = "configure-defender-vulnerability-management"
+n = 6
+slug = "6-knowledge-check"
+title = "Knowledge check"
+kind = "assessment"
+objectives = []
+
+[[units]]
+module = "configure-defender-vulnerability-management"
+n = 7
+slug = "7-summary"
+title = "Summary"
+kind = "summary"
+objectives = []
+
+[[units]]
+module = "create-manage-azure-sentinel-workspaces"
+n = 1
+slug = "1-introduction"
+title = "Introduction"
+kind = "intro"
+objectives = []
+
+[[units]]
+module = "create-manage-azure-sentinel-workspaces"
+n = 2
+slug = "2-plan-for-azure-sentinel-workspace"
+title = "Plan for the Microsoft Sentinel workspace"
+kind = "concept"
+objectives = ["D4.2.1"]
+
+[[units]]
+module = "create-manage-azure-sentinel-workspaces"
+n = 3
+slug = "3-create-azure-sentinel-workspace"
+title = "Create a Microsoft Sentinel workspace"
+kind = "concept"
+objectives = ["D4.2.1"]
+
+[[units]]
+module = "create-manage-azure-sentinel-workspaces"
+n = 4
+slug = "4-manage-workspaces-across-tenants-using-azure-lighthouse"
+title = "Manage workspaces across tenants using Azure Lighthouse"
+kind = "concept"
+objectives = ["D4.2.1"]
+
+[[units]]
+module = "create-manage-azure-sentinel-workspaces"
+n = 5
+slug = "5-understand-azure-sentinel-permissions-roles"
+title = "Understand Microsoft Sentinel permissions and roles"
+kind = "concept"
+objectives = ["D4.2.2"]
+
+[[units]]
+module = "create-manage-azure-sentinel-workspaces"
+n = 6
+slug = "6-manage-azure-sentinel-settings"
+title = "Manage Microsoft Sentinel settings"
+kind = "concept"
+objectives = ["D4.2.1"]
+
+[[units]]
+module = "create-manage-azure-sentinel-workspaces"
+n = 7
+slug = "7-configure-logs"
+title = "Configure logs"
+kind = "concept"
+objectives = ["D4.2.1"]
+
+[[units]]
+module = "create-manage-azure-sentinel-workspaces"
+n = 8
+slug = "8-knowledge-check"
+title = "Module assessment"
+kind = "assessment"
+objectives = []
+
+[[units]]
+module = "create-manage-azure-sentinel-workspaces"
+n = 9
+slug = "9-summary-resources"
+title = "Summary and resources"
+kind = "summary"
+objectives = []
+
+[[units]]
+module = "manage-content-microsoft-sentinel"
+n = 1
+slug = "1-introduction"
+title = "Introduction"
+kind = "intro"
+objectives = []
+
+[[units]]
+module = "manage-content-microsoft-sentinel"
+n = 2
+slug = "2-use-solutions-from-content-hub"
+title = "Use solutions from the content hub"
+kind = "concept"
+objectives = ["D4.2.3"]
+
+[[units]]
+module = "manage-content-microsoft-sentinel"
+n = 3
+slug = "3-use-repositories-for-deployment"
+title = "Use repositories for deployment"
+kind = "concept"
+objectives = []
+off_blueprint = true
+note = "repositories (CI/CD content deployment) — not on the bullet"
+
+[[units]]
+module = "manage-content-microsoft-sentinel"
+n = 4
+slug = "4-knowledge-check"
+title = "Module assessment"
+kind = "assessment"
+objectives = []
+
+[[units]]
+module = "manage-content-microsoft-sentinel"
+n = 5
+slug = "5-summary-resources"
+title = "Summary and resources"
+kind = "summary"
+objectives = []
+
+[[units]]
+module = "connect-microsoft-services-to-azure-sentinel"
+n = 1
+slug = "1-introduction"
+title = "Introduction"
+kind = "intro"
+objectives = []
+
+[[units]]
+module = "connect-microsoft-services-to-azure-sentinel"
+n = 2
+slug = "2-plan-for-microsoft-services-connectors"
+title = "Plan for Microsoft services connectors"
+kind = "concept"
+objectives = ["D4.2.4"]
+
+[[units]]
+module = "connect-microsoft-services-to-azure-sentinel"
+n = 3
+slug = "3-connect-office-365-connector"
+title = "Connect the Microsoft 365 connector"
+kind = "concept"
+objectives = ["D4.2.4"]
+
+[[units]]
+module = "connect-microsoft-services-to-azure-sentinel"
+n = 4
+slug = "4-connect-azure-active-directory-connector"
+title = "Connect the Microsoft Entra connector"
+kind = "concept"
+objectives = ["D4.2.4"]
+
+[[units]]
+module = "connect-microsoft-services-to-azure-sentinel"
+n = 5
+slug = "5-connect-azure-active-directory-identity-protection-connector"
+title = "Connect the Microsoft Entra ID Protection connector"
+kind = "concept"
+objectives = ["D4.2.4"]
+
+[[units]]
+module = "connect-microsoft-services-to-azure-sentinel"
+n = 6
+slug = "6-connect-azure-activity-connector"
+title = "Connect the Azure Activity connector"
+kind = "concept"
+objectives = ["D4.2.4"]
+
+[[units]]
+module = "connect-microsoft-services-to-azure-sentinel"
+n = 7
+slug = "7-knowledge-check"
+title = "Module assessment"
+kind = "assessment"
+objectives = []
+
+[[units]]
+module = "connect-microsoft-services-to-azure-sentinel"
+n = 8
+slug = "8-summary-resources"
+title = "Summary and resources"
+kind = "summary"
+objectives = []
+
+[[units]]
+module = "connect-syslog-data-sources-to-azure-sentinel"
+n = 1
+slug = "1-introduction"
+title = "Introduction"
+kind = "intro"
+objectives = []
+
+[[units]]
+module = "connect-syslog-data-sources-to-azure-sentinel"
+n = 2
+slug = "2-plan-for-syslog-connector"
+title = "Plan for syslog data collection"
+kind = "concept"
+objectives = ["D4.2.5"]
+
+[[units]]
+module = "connect-syslog-data-sources-to-azure-sentinel"
+n = 3
+slug = "3-collect-data-from-linux-based-sources-using-syslog"
+title = "Collect data from Linux-based sources using syslog"
+kind = "concept"
+objectives = ["D4.2.5"]
+
+[[units]]
+module = "connect-syslog-data-sources-to-azure-sentinel"
+n = 4
+slug = "4-configure-log-analytics-agent"
+title = "Configure the Data Collection Rule for Syslog Data Sources"
+kind = "concept"
+objectives = ["D4.2.5"]
+
+[[units]]
+module = "connect-syslog-data-sources-to-azure-sentinel"
+n = 5
+slug = "5-parse-syslog-data"
+title = "Parse syslog data with KQL"
+kind = "concept"
+objectives = ["D4.2.5"]
+
+[[units]]
+module = "connect-syslog-data-sources-to-azure-sentinel"
+n = 6
+slug = "6-knowledge-check"
+title = "Module assessment"
+kind = "assessment"
+objectives = []
+
+[[units]]
+module = "connect-syslog-data-sources-to-azure-sentinel"
+n = 7
+slug = "7-summary-resources"
+title = "Summary and resources"
+kind = "summary"
+objectives = []
+
+[[units]]
+module = "connect-common-event-format-logs-to-azure-sentinel"
+n = 1
+slug = "1-introduction"
+title = "Introduction"
+kind = "intro"
+objectives = []
+
+[[units]]
+module = "connect-common-event-format-logs-to-azure-sentinel"
+n = 2
+slug = "2-plan-for-common-event-format-cef-connector"
+title = "Plan for Common Event Format connector"
+kind = "concept"
+objectives = ["D4.2.5"]
+
+[[units]]
+module = "connect-common-event-format-logs-to-azure-sentinel"
+n = 3
+slug = "3-connect-your-external-solution-use-common-event-format-connector"
+title = "Connect your external solution using the Common Event Format connector"
+kind = "concept"
+objectives = ["D4.2.5"]
+
+[[units]]
+module = "connect-common-event-format-logs-to-azure-sentinel"
+n = 4
+slug = "4-knowledge-check"
+title = "Module assessment"
+kind = "assessment"
+objectives = []
+
+[[units]]
+module = "connect-common-event-format-logs-to-azure-sentinel"
+n = 5
+slug = "5-summary-resources"
+title = "Summary and resources"
+kind = "summary"
+objectives = []
+
+[[units]]
+module = "connect-windows-hosts-to-azure-sentinel"
+n = 1
+slug = "1-introduction"
+title = "Introduction"
+kind = "intro"
+objectives = []
+
+[[units]]
+module = "connect-windows-hosts-to-azure-sentinel"
+n = 2
+slug = "2-plan-for-windows-hosts-security-events-connector"
+title = "Plan for Windows hosts security events connector"
+kind = "concept"
+objectives = ["D4.2.6"]
+
+[[units]]
+module = "connect-windows-hosts-to-azure-sentinel"
+n = 3
+slug = "2a-configure-data-collection-rules"
+title = "Connect using the Windows Security Events via AMA Connector"
+kind = "concept"
+objectives = ["D4.2.6"]
+
+[[units]]
+module = "connect-windows-hosts-to-azure-sentinel"
+n = 4
+slug = "2b-connect-windows-hosts"
+title = "Connect using the Security Events via Legacy Agent Connector"
+kind = "concept"
+objectives = []
+off_blueprint = true
+note = "legacy Log Analytics agent — retired"
+
+[[units]]
+module = "connect-windows-hosts-to-azure-sentinel"
+n = 5
+slug = "3-collect-sysmon-event-logs"
+title = "Collect Sysmon event logs"
+kind = "concept"
+objectives = []
+off_blueprint = true
+note = "Sysmon collection — not on the bullet"
+
+[[units]]
+module = "connect-windows-hosts-to-azure-sentinel"
+n = 6
+slug = "4-knowledge-check"
+title = "Module assessment"
+kind = "assessment"
+objectives = []
+
+[[units]]
+module = "connect-windows-hosts-to-azure-sentinel"
+n = 7
+slug = "5-summary-resources"
+title = "Summary and resources"
+kind = "summary"
+objectives = []
+
+[[units]]
+module = "implement-automation-rules-playbooks-sentinel"
+n = 1
+slug = "1-introduction"
+title = "Introduction"
+kind = "intro"
+objectives = []
+
+[[units]]
+module = "implement-automation-rules-playbooks-sentinel"
+n = 2
+slug = "2-understand-automation-options"
+title = "Understand Microsoft Sentinel automation options"
+kind = "concept"
+objectives = ["D4.2.8"]
+
+[[units]]
+module = "implement-automation-rules-playbooks-sentinel"
+n = 3
+slug = "3-create-automation-rules"
+title = "Create automation rules in Microsoft Sentinel"
+kind = "concept"
+objectives = ["D4.2.8"]
+
+[[units]]
+module = "implement-automation-rules-playbooks-sentinel"
+n = 4
+slug = "4-configure-content-hub-playbook"
+title = "Configure and activate a Content Hub playbook"
+kind = "concept"
+objectives = ["D4.2.8"]
+
+[[units]]
+module = "implement-automation-rules-playbooks-sentinel"
+n = 5
+slug = "5-author-custom-playbook"
+title = "Author a custom playbook with Azure Logic Apps"
+kind = "concept"
+objectives = ["D4.2.8"]
+
+[[units]]
+module = "implement-automation-rules-playbooks-sentinel"
+n = 6
+slug = "6-knowledge-check"
+title = "Knowledge check"
+kind = "assessment"
+objectives = []
+
+[[units]]
+module = "implement-automation-rules-playbooks-sentinel"
+n = 7
+slug = "7-summary"
+title = "Summary"
+kind = "summary"
+objectives = []
+
+[[units]]
+module = "manage-data-storage-audit-logs-sentinel"
+n = 1
+slug = "1-introduction"
+title = "Introduction"
+kind = "intro"
+objectives = []
+
+[[units]]
+module = "manage-data-storage-audit-logs-sentinel"
+n = 2
+slug = "2-create-custom-log-tables"
+title = "Create custom log tables in Microsoft Sentinel"
+kind = "concept"
+objectives = ["D4.2.7"]
+
+[[units]]
+module = "manage-data-storage-audit-logs-sentinel"
+n = 3
+slug = "3-implement-data-retention"
+title = "Implement data retention in Microsoft Sentinel"
+kind = "concept"
+objectives = ["D4.2.9"]
+
+[[units]]
+module = "manage-data-storage-audit-logs-sentinel"
+n = 4
+slug = "4-connect-purview-audit"
+title = "Connect Microsoft Purview Audit to Microsoft Sentinel"
+kind = "concept"
+objectives = ["D4.2.10"]
+license_blocked = true
+
+[[units]]
+module = "manage-data-storage-audit-logs-sentinel"
+n = 5
+slug = "5-query-purview-audit"
+title = "Query Purview Audit logs in Microsoft Defender XDR"
+kind = "concept"
+objectives = ["D4.2.10"]
+license_blocked = true
+
+[[units]]
+module = "manage-data-storage-audit-logs-sentinel"
+n = 6
+slug = "6-knowledge-check"
+title = "Knowledge check"
+kind = "assessment"
+objectives = []
+
+[[units]]
+module = "manage-data-storage-audit-logs-sentinel"
+n = 7
+slug = "7-summary"
+title = "Summary"
+kind = "summary"
+objectives = []
+
+[[units]]
+module = "security-copilot-getting-started"
+n = 1
+slug = "1-introduction"
+title = "Introduction"
+kind = "intro"
+objectives = []
+
+[[units]]
+module = "security-copilot-getting-started"
+n = 2
+slug = "2-describe-security-copilot"
+title = "Get acquainted with Microsoft Security Copilot"
+kind = "concept"
+objectives = []
+off_blueprint = true
+note = "product overview — foundation material"
+
+[[units]]
+module = "security-copilot-getting-started"
+n = 3
+slug = "3-describe-terminology"
+title = "Describe Microsoft Security Copilot terminology"
+kind = "concept"
+objectives = []
+off_blueprint = true
+note = "terminology — foundation material"
+
+[[units]]
+module = "security-copilot-getting-started"
+n = 4
+slug = "4-describe-how-copilot-processes-prompts"
+title = "Describe how Microsoft Security Copilot processes prompt requests"
+kind = "concept"
+objectives = []
+off_blueprint = true
+note = "prompt processing internals"
+
+[[units]]
+module = "security-copilot-getting-started"
+n = 5
+slug = "5-create-effective-prompts"
+title = "Describe the elements of an effective prompt"
+kind = "concept"
+objectives = []
+off_blueprint = true
+note = "prompt-writing craft — analyst skill, not configuration"
+
+[[units]]
+module = "security-copilot-getting-started"
+n = 6
+slug = "6-describe-how-to-enable-security-copilot"
+title = "Describe how to enable Microsoft Security Copilot"
+kind = "concept"
+objectives = ["D4.3.1"]
+license_blocked = true
+
+[[units]]
+module = "security-copilot-getting-started"
+n = 7
+slug = "7-knowledge-check"
+title = "Module assessment"
+kind = "assessment"
+objectives = []
+
+[[units]]
+module = "security-copilot-getting-started"
+n = 8
+slug = "8-summary"
+title = "Summary and resources"
+kind = "summary"
+objectives = []
+
+[[units]]
+module = "configure-security-copilot-workspaces"
+n = 1
+slug = "1-introduction"
+title = "Introduction"
+kind = "intro"
+objectives = []
+
+[[units]]
+module = "configure-security-copilot-workspaces"
+n = 2
+slug = "2-plan-workspace-deployment"
+title = "Plan a workspace deployment"
+kind = "concept"
+objectives = ["D4.3.1"]
+license_blocked = true
+
+[[units]]
+module = "configure-security-copilot-workspaces"
+n = 3
+slug = "3-create-workspace"
+title = "Create a Security Copilot workspace"
+kind = "concept"
+objectives = ["D4.3.1"]
+license_blocked = true
+
+[[units]]
+module = "configure-security-copilot-workspaces"
+n = 4
+slug = "4-configure-workspace-access-settings"
+title = "Configure workspace access and settings"
+kind = "concept"
+objectives = ["D4.3.1", "D4.3.2"]
+license_blocked = true
+
+[[units]]
+module = "configure-security-copilot-workspaces"
+n = 5
+slug = "5-assign-workspaces-integrated-agents"
+title = "Assign workspaces for integrated agents"
+kind = "concept"
+objectives = ["D4.3.1", "D4.3.4"]
+license_blocked = true
+
+[[units]]
+module = "configure-security-copilot-workspaces"
+n = 6
+slug = "6-monitor-manage-workspace-capacity"
+title = "Monitor and manage workspace capacity"
+kind = "concept"
+objectives = ["D4.3.1"]
+license_blocked = true
+
+[[units]]
+module = "configure-security-copilot-workspaces"
+n = 7
+slug = "7-knowledge-check"
+title = "Knowledge check"
+kind = "assessment"
+objectives = []
+
+[[units]]
+module = "configure-security-copilot-workspaces"
+n = 8
+slug = "8-summary"
+title = "Summary"
+kind = "summary"
+objectives = []
+
+[[units]]
+module = "manage-plugins-agents-security-copilot"
+n = 1
+slug = "1-introduction"
+title = "Introduction"
+kind = "intro"
+objectives = []
+
+[[units]]
+module = "manage-plugins-agents-security-copilot"
+n = 2
+slug = "2-configure-plug-in-settings"
+title = "Configure plugin settings in Security Copilot"
+kind = "concept"
+objectives = ["D4.3.3"]
+license_blocked = true
+
+[[units]]
+module = "manage-plugins-agents-security-copilot"
+n = 3
+slug = "3-discover-set-up-microsoft-agents"
+title = "Discover and set up Microsoft-built agents"
+kind = "concept"
+objectives = ["D4.3.4"]
+license_blocked = true
+
+[[units]]
+module = "manage-plugins-agents-security-copilot"
+n = 4
+slug = "4-acquire-configure-partner-agents"
+title = "Acquire and configure partner agents from Security Store"
+kind = "concept"
+objectives = ["D4.3.4"]
+license_blocked = true
+
+[[units]]
+module = "manage-plugins-agents-security-copilot"
+n = 5
+slug = "5-manage-agents"
+title = "Manage Security Copilot agents"
+kind = "concept"
+objectives = ["D4.3.4"]
+license_blocked = true
+
+[[units]]
+module = "manage-plugins-agents-security-copilot"
+n = 6
+slug = "6-knowledge-check"
+title = "Knowledge check"
+kind = "assessment"
+objectives = []
+
+[[units]]
+module = "manage-plugins-agents-security-copilot"
+n = 7
+slug = "7-summary"
+title = "Summary"
+kind = "summary"
+objectives = []
